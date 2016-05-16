@@ -19,8 +19,11 @@ class QuizBrain {
     private func askQuestion() -> (String, String){
         // TODO: gets random question from questionBank
         
-        let random = Int(arc4random_uniform(UInt32(questionBank.count)))
+        let randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
         
-        return ("stopSign.jpg", "Stop")
+        let question = Array(questionBank.keys)[randomIndex]
+        let answer = Array(questionBank.keys)[randomIndex]
+        
+        return (question, answer)
     }
 }
