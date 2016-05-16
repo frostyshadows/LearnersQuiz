@@ -15,6 +15,8 @@ class QuizBrain {
         static let Stop = "stopSign.jpg"
     }
     
+    private var currentCorrectAnswer = "Stop"
+    
     // Bank of questions, integer would correspond to an image
     private var questionBank: Dictionary<String, String> = [
         "Stop": StringConstants.Stop
@@ -27,15 +29,23 @@ class QuizBrain {
         let randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
         
         let question = Array(questionBank.keys)[randomIndex]
-        let answer = Array(questionBank.keys)[randomIndex]
+        let currentCorrectAnswer = Array(questionBank.keys)[randomIndex]
         
-        return (question, answer)
+        return (question, currentCorrectAnswer)
     }
     
     // checks answer
-    func checkAnswer(givenAnswer: AnyObject) -> Bool {
+    func checkAnswer(givenAnswerFromUser: AnyObject) -> Bool {
+        let givenAnswer = givenAnswerFromUser as! String
+        if givenAnswer == currentCorrectAnswer {
+            return true
+        }
+        return false
         
-        return true
+    }
+    
+    // finishes current quiz
+    func finishCurrentQuiz() {
         
     }
 }
