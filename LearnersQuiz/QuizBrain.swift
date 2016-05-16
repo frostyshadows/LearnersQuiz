@@ -10,9 +10,14 @@ import Foundation
 import UIKit
 
 class QuizBrain {
+    
+    private struct StringConstants {
+        static let Stop = "stopSign.jpg"
+    }
+    
     // Bank of questions, integer would correspond to an image
     private var questionBank: Dictionary<String, String> = [
-        "stopSign.jpg": "Stop"
+        "Stop": StringConstants.stop
     ]
     
     // called by QuizViewController when "Next question" button is clicked
