@@ -11,6 +11,15 @@ import UIKit
 
 class QuizBrain {
     
+    static var currentQuestion: String = getRandomQuestion()
+    
+    private struct AnswerOptions {
+        var FirstAnswer: String
+        var SecondAnswer: String
+        var ThirdAnswer: String
+        var FourthAnswer = currentSign
+    }
+    
     private struct StringConstants {
         static let Stop = "stopSign.jpg"
     }
@@ -47,5 +56,11 @@ class QuizBrain {
     // finishes current quiz
     func finishCurrentQuiz() {
         
+    }
+    
+    //returns a random sign
+    func getRandomQuestion() -> String {
+        let randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
+        return Array(questionBank.keys)[randomIndex]
     }
 }
