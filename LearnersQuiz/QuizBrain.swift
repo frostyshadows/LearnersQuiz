@@ -17,7 +17,7 @@ class QuizBrain {
     
     // Bank of questions, integer would correspond to an image
     private var questionBank: Dictionary<String, String> = [
-        "Stop": StringConstants.stop
+        "Stop": StringConstants.Stop
     ]
     
     // called by QuizViewController when "Next question" button is clicked
