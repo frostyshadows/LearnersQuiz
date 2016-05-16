@@ -17,7 +17,7 @@ class QuizBrain {
     
     private var currentCorrectAnswer = "Stop"
     
-    // Bank of questions, integer would correspond to an image
+    // Bank of questions, first string would be correct answer, second string would correspond to an image
     private var questionBank: Dictionary<String, String> = [
         "Stop": StringConstants.Stop
     ]
