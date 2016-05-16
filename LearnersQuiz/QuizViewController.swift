@@ -9,8 +9,18 @@
 import UIKit
 
 class QuizViewController: UIViewController {
-    
-    
+
+
+    private var brain = QuizBrain()
+    private var numQuestions = 0
+    @IBAction func AnswerOneButton(sender: AnyObject) {
+        brain.checkAnswer(sender)
+        if numQuestions < 20 {
+            brain.askQuestion()
+        }
+        numQuestions += 1
+    }
+
 
 }
 

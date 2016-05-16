@@ -16,7 +16,7 @@ class QuizBrain {
     ]
     
     // called by QuizViewController when "Next question" button is clicked
-    private func askQuestion() -> (String, String){
+    func askQuestion() -> (String, String){
         // TODO: gets random question from questionBank
         
         let randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
@@ -25,5 +25,12 @@ class QuizBrain {
         let answer = Array(questionBank.keys)[randomIndex]
         
         return (question, answer)
+    }
+    
+    // checks answer
+    func checkAnswer(givenAnswer: AnyObject) -> Bool {
+        
+        return true
+        
     }
 }
