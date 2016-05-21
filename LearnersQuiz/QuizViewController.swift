@@ -54,9 +54,7 @@ class QuizViewController: UIViewController {
   //      } else {
   //          brain.finishCurrentQuiz()
   //      }
-    }
-
-
-
 }
+
+
 

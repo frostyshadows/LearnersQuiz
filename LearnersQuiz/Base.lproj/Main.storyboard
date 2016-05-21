@@ -17,14 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
-                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXc-jl-tG6">
-                                <rect key="frame" x="237" y="99" width="127" height="50"/>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXc-jl-tG6">
+                                <rect key="frame" x="260" y="99" width="81" height="50"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZx-BX-4fK">
-                                <rect key="frame" x="253" y="197" width="95" height="33"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZx-BX-4fK">
+                                <rect key="frame" x="259" y="197" width="82" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Answer 1"/>
                                 <connections>
@@ -32,8 +32,8 @@
                                     <action selector="NextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DW7-SM-35d"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-fk-CIH">
-                                <rect key="frame" x="253" y="238" width="95" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-fk-CIH">
+                                <rect key="frame" x="258" y="241" width="84" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Answer 2"/>
                                 <connections>
@@ -41,8 +41,8 @@
                                     <action selector="NextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NJa-dP-La9"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goA-Gw-TY6">
-                                <rect key="frame" x="253" y="282" width="95" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goA-Gw-TY6">
+                                <rect key="frame" x="257" y="285" width="85" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Answer 3"/>
                                 <connections>
@@ -51,8 +51,8 @@
                                     <action selector="NextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DwH-5s-Z4j"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoV-iF-0Vt">
-                                <rect key="frame" x="253" y="326" width="95" height="36"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoV-iF-0Vt">
+                                <rect key="frame" x="258" y="329" width="85" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Answer 4"/>
                                 <connections>
@@ -61,8 +61,8 @@
                                     <action selector="NextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ce-3X-GXO"/>
                                 </connections>
                             </button>
-                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbo-fw-dEZ">
-                                <rect key="frame" x="231" y="370" width="139" height="30"/>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbo-fw-dEZ">
+                                <rect key="frame" x="236" y="373" width="128" height="36"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Next Question"/>
                                 <connections>
@@ -71,6 +71,22 @@
                             </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="ayC-fk-CIH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="140-Mu-VO0"/>
+                            <constraint firstItem="goA-Gw-TY6" firstAttribute="top" secondItem="ayC-fk-CIH" secondAttribute="bottom" constant="8" id="8Hq-of-Oir"/>
+                            <constraint firstItem="VXc-jl-tG6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="79" id="CEr-Kx-ohi"/>
+                            <constraint firstItem="ZoV-iF-0Vt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CiQ-cb-rQ1"/>
+                            <constraint firstItem="gbo-fw-dEZ" firstAttribute="top" secondItem="ZoV-iF-0Vt" secondAttribute="bottom" constant="8" id="DJ1-fX-3B4"/>
+                            <constraint firstItem="goA-Gw-TY6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FcL-6n-aFb"/>
+                            <constraint firstItem="UZx-BX-4fK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HRV-ua-pTT"/>
+                            <constraint firstItem="VXc-jl-tG6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JWa-gR-HH1"/>
+                            <constraint firstItem="gbo-fw-dEZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PIS-SC-U0j"/>
+                            <constraint firstItem="VXc-jl-tG6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bHZ-Gh-XfP"/>
+                            <constraint firstItem="ZoV-iF-0Vt" firstAttribute="top" secondItem="goA-Gw-TY6" secondAttribute="bottom" constant="8" id="k1Z-KG-pgU"/>
+                            <constraint firstItem="ayC-fk-CIH" firstAttribute="top" secondItem="UZx-BX-4fK" secondAttribute="bottom" constant="8" id="l1e-Jc-INu"/>
+                            <constraint firstItem="UZx-BX-4fK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="177" id="qxf-za-ezy"/>
+                            <constraint firstItem="UZx-BX-4fK" firstAttribute="top" secondItem="VXc-jl-tG6" secondAttribute="bottom" constant="48" id="s5M-aB-ckR"/>
+                        </constraints>
                     </view>
                     <connections>
                         <outlet property="ans1Button" destination="UZx-BX-4fK" id="7Km-BF-MHZ"/>

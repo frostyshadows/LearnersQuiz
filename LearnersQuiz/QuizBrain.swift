@@ -14,10 +14,11 @@ class QuizBrain {
     var currentQuestion: String
     
 //    private struct AnswerOptions {
-    var currentCorrectAnswer: String
-    var FirstAnswer: String
-    var SecondAnswer: String
-    var ThirdAnswer: String
+    private var currentSign: String
+    private var currentCorrectAnswer: String
+    private var FirstAnswer: String
+    private var SecondAnswer: String
+    private var ThirdAnswer: String
 //   }
     
     private struct StringConstants {
@@ -28,13 +29,20 @@ class QuizBrain {
         static let NoLeftTurn = "noLeftTurn.jpg"
     }
     
-    private var currentSign = StringConstants.Stop
-    
+    // ideally the first question would be random too
+    init(){
+        currentQuestion = "stopSign.jpg"
+        currentCorrectAnswer = "Stop"
+        currentSign = StringConstants.Stop
+        FirstAnswer = "Do not enter"
+        SecondAnswer = "No passing allowed at any time"
+        ThirdAnswer = "No pedestrians allowed on roadway"
+    }
     
     // Bank of questions, first string would be correct answer, second string would correspond to an image
     private var questionBank: Dictionary<String, String> = [
         "Stop": StringConstants.Stop,
-        "Do not answer": StringConstants.DNE,
+        "Do not enter": StringConstants.DNE,
         "No passing allowed at any time": StringConstants.NoPassing,
         "No pedestrians allowed on roadway": StringConstants.NoPedestrians,
         "No left turn at intersection": StringConstants.NoLeftTurn
