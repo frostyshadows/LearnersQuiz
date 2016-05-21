@@ -17,8 +17,14 @@
                         <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
                         <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
                         <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" text="Question" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="VXc-jl-tG6">
+                                <rect key="frame" x="237" y="99" width="127" height="50"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                             <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="UZx-BX-4fK">
-                                <rect key="frame" x="253" y="272" width="95" height="55"/>
+                                <rect key="frame" x="253" y="197" width="95" height="33"/>
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Answer 1"/>
                                 <connections>
@@ -26,9 +32,53 @@
                                     <action selector="NextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DW7-SM-35d"/>
                                 </connections>
                             </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-fk-CIH">
+                                <rect key="frame" x="253" y="238" width="95" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Answer 2"/>
+                                <connections>
+                                    <action selector="AnswerOneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BlV-KC-rjF"/>
+                                    <action selector="NextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NJa-dP-La9"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goA-Gw-TY6">
+                                <rect key="frame" x="253" y="282" width="95" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Answer 3"/>
+                                <connections>
+                                    <action selector="AnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kG3-ym-eWe"/>
+                                    <action selector="AnswerOneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tck-C2-3iR"/>
+                                    <action selector="NextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DwH-5s-Z4j"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoV-iF-0Vt">
+                                <rect key="frame" x="253" y="326" width="95" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Answer 4"/>
+                                <connections>
+                                    <action selector="AnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G0f-2R-ziq"/>
+                                    <action selector="AnswerOneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OXg-Ua-PMl"/>
+                                    <action selector="NextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ce-3X-GXO"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" fixedFrame="YES" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbo-fw-dEZ">
+                                <rect key="frame" x="231" y="370" width="139" height="30"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Next Question"/>
+                                <connections>
+                                    <action selector="nextQuestion" destination="BYZ-38-t0r" eventType="touchUpInside" id="6SC-pv-SSa"/>
+                                </connections>
+                            </button>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                     </view>
+                    <connections>
+                        <outlet property="ans1Button" destination="UZx-BX-4fK" id="7Km-BF-MHZ"/>
+                        <outlet property="ans2Button" destination="ayC-fk-CIH" id="S5J-zz-k57"/>
+                        <outlet property="ans3Button" destination="goA-Gw-TY6" id="Ed3-0w-ULF"/>
+                        <outlet property="ans4Button" destination="ZoV-iF-0Vt" id="Cae-5x-bmq"/>
+                        <outlet property="mainTextBox" destination="VXc-jl-tG6" id="IhQ-KO-2k5"/>
+                    </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>

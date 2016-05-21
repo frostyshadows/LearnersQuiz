@@ -42,6 +42,7 @@ class QuizBrain {
 
     
     // called by QuizViewController when "Next question" button is clicked
+    // returns rng question, correct answer to the question, and 3 random incorrect answers
     func askQuestion() -> (String, String, String, String, String){
         // TODO: gets random question from questionBank
         
@@ -78,8 +79,8 @@ class QuizBrain {
     }
     
     //returns a random sign
-    func getRandomQuestion() -> String {
-        let randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
-        return Array(questionBank.keys)[randomIndex]
-    }
+    //func getRandomQuestion() -> String {
+    //    let randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
+    //    return Array(questionBank.keys)[randomIndex]
+    //}
 }
