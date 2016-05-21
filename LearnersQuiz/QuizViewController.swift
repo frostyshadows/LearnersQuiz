@@ -23,7 +23,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var ans4Button: UIButton!
     
     @IBAction func AnswerButton(sender: AnyObject) {
-        if brain.checkAnswer(sender) == true {
+        if brain.checkAnswer(sender) {
             mainTextBox.text = "Good job!"
         } else {
             mainTextBox.text = "Better luck next time"
