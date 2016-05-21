@@ -49,15 +49,9 @@ class QuizBrain {
         var randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
         
         let correctAnswer = Array(questionBank.keys)[randomIndex]
-        
-        randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
-        let randomAns1 = Array(questionBank.keys)[randomIndex]
-        
-        randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
-        let randomAns2 = Array(questionBank.keys)[randomIndex]
-        
-        randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
-        let randomAns3 = Array(questionBank.keys)[randomIndex]
+        let randomAns1 = Array(questionBank.keys)[(randomIndex+1) % 4]
+        let randomAns2 = Array(questionBank.keys)[(randomIndex+2) % 4]
+        let randomAns3 = Array(questionBank.keys)[(randomIndex+3) % 4]
         
         return (correctAnswer, randomAns1, randomAns2, randomAns3)
     }
