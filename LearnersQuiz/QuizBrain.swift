@@ -11,32 +11,18 @@ import UIKit
 
 class QuizBrain {
     
-    var currentQuestion: String
+    private var correctAnswer: String
+    private var secondAnswer: String
+    private var thirdAnswer: String
+    private var fourthAnswer: String
     
-//    private struct AnswerOptions {
-    private var currentSign: String
-    private var currentCorrectAnswer: String
-    private var FirstAnswer: String
-    private var SecondAnswer: String
-    private var ThirdAnswer: String
-//   }
-    
+    // Constants representing the filenames of the images used
     private struct StringConstants {
         static let Stop = "stopSign.jpg"
         static let NoPassing = "noPassing.jpg"
         static let DNE = "dne.jpg"
         static let NoPedestrians = "noPedestrians.jpg"
         static let NoLeftTurn = "noLeftTurn.jpg"
-    }
-    
-    // ideally the first question would be random too
-    init(){
-        currentQuestion = StringConstants.Stop
-        currentCorrectAnswer = "Stop"
-        currentSign = StringConstants.Stop
-        FirstAnswer = "Do not enter"
-        SecondAnswer = "No passing allowed at any time"
-        ThirdAnswer = "No pedestrians allowed on roadway"
     }
     
     // Bank of questions, first string would be correct answer, second string would correspond to an image
@@ -47,17 +33,22 @@ class QuizBrain {
         "No pedestrians allowed on roadway": StringConstants.NoPedestrians,
         "No left turn at intersection": StringConstants.NoLeftTurn
     ]
-
+    
+    init() {
+        correctAnswer = "Stop"
+        secondAnswer = "Do not enter"
+        thirdAnswer = "No passing allowed at any time"
+        fourthAnswer = "No pedestrians allowed on roadway"
+    }
     
     // called by QuizViewController when "Next question" button is clicked
     // returns rng question, correct answer to the question, and 3 random incorrect answers
-    func askQuestion() -> (String, String, String, String, String){
+    func askQuestion() -> (String, String, String, String){
         // TODO: gets random question from questionBank
         
         var randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
         
-        let question = Array(questionBank.keys)[randomIndex]
-        let currentCorrectAnswer = Array(questionBank.keys)[randomIndex]
+        let correctAnswer = Array(questionBank.keys)[randomIndex]
         
         randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
         let randomAns1 = Array(questionBank.keys)[randomIndex]
@@ -68,14 +59,14 @@ class QuizBrain {
         randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
         let randomAns3 = Array(questionBank.keys)[randomIndex]
         
-        return (question, currentCorrectAnswer, randomAns1, randomAns2, randomAns3)
+        return (correctAnswer, randomAns1, randomAns2, randomAns3)
     }
     
     // checks answer
     func checkAnswer(givenAnswerFromUser: AnyObject) -> Bool {
         let givenAnswerButton = givenAnswerFromUser as! UIButton
         let givenAnswer = givenAnswerButton.titleLabel
-        if givenAnswer == currentCorrectAnswer {
+        if givenAnswer == correctAnswer {
             return true
         }
         return false
