@@ -11,36 +11,55 @@ import UIKit
 
 class QuizBrain {
     
-    static var currentQuestion: String = getRandomQuestion()
+    var currentQuestion: String
     
-    private struct AnswerOptions {
-        var FirstAnswer: String
-        var SecondAnswer: String
-        var ThirdAnswer: String
-        var FourthAnswer = currentSign
-    }
+//    private struct AnswerOptions {
+    var currentCorrectAnswer: String
+    var FirstAnswer: String
+    var SecondAnswer: String
+    var ThirdAnswer: String
+//   }
     
     private struct StringConstants {
         static let Stop = "stopSign.jpg"
+        static let NoPassing = "noPassing.jpg"
+        static let DNE = "dne.jpg"
+        static let NoPedestrians = "noPedestrians.jpg"
+        static let NoLeftTurn = "noLeftTurn.jpg"
     }
     
-    private var currentCorrectAnswer = "Stop"
+    private var currentSign = StringConstants.Stop
+    
     
     // Bank of questions, first string would be correct answer, second string would correspond to an image
     private var questionBank: Dictionary<String, String> = [
-        "Stop": StringConstants.Stop
+        "Stop": StringConstants.Stop,
+        "Do not answer": StringConstants.DNE,
+        "No passing allowed at any time": StringConstants.NoPassing,
+        "No pedestrians allowed on roadway": StringConstants.NoPedestrians,
+        "No left turn at intersection": StringConstants.NoLeftTurn
     ]
+
     
     // called by QuizViewController when "Next question" button is clicked
-    func askQuestion() -> (String, String){
+    func askQuestion() -> (String, String, String, String, String){
         // TODO: gets random question from questionBank
         
-        let randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
+        var randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
         
         let question = Array(questionBank.keys)[randomIndex]
         let currentCorrectAnswer = Array(questionBank.keys)[randomIndex]
         
-        return (question, currentCorrectAnswer)
+        randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
+        let randomAns1 = Array(questionBank.keys)[randomIndex]
+        
+        randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
+        let randomAns2 = Array(questionBank.keys)[randomIndex]
+        
+        randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
+        let randomAns3 = Array(questionBank.keys)[randomIndex]
+        
+        return (question, currentCorrectAnswer, randomAns1, randomAns2, randomAns3)
     }
     
     // checks answer
