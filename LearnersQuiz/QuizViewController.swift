@@ -17,6 +17,23 @@ class QuizViewController: UIViewController {
     
     private var numQuestions = 0
     
+    private struct StringConstants {
+        static let Stop = "stopSign.jpg"
+        static let NoPassing = "noPassing.jpg"
+        static let DoNotEnter = "dne.jpg"
+        static let NoPedestrians = "noPedestrians.jpg"
+        static let NoLeftTurn = "noLeftTurn.jpg"
+    }
+    
+    // Bank of questions, first string would be correct answer, second string would correspond to an image
+    private var questionBank: Dictionary<Sign, String> = [
+        Sign.Stop: StringConstants.Stop,
+        Sign.DoNotEnter: StringConstants.DoNotEnter,
+        Sign.NoPass: StringConstants.NoPassing,
+        Sign.NoPed: StringConstants.NoPedestrians,
+        Sign.NoLeft: StringConstants.NoLeftTurn
+    ]
+    
     @IBOutlet weak var ans1Button: UIButton!
     @IBOutlet weak var ans2Button: UIButton!
     @IBOutlet weak var ans3Button: UIButton!
@@ -35,7 +52,7 @@ class QuizViewController: UIViewController {
         // qAndA will be a tuple
         let qAndA = brain.askQuestion()
         // sets textBox to show question
-        mainTextBox.text = qAndA.0
+        mainTextBox.text = questionBank[qAndA.0]
         
         ans1Button.setTitle("\(qAndA.0)", forState: UIControlState.Normal)
         

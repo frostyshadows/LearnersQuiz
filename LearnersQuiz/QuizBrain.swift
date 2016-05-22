@@ -11,52 +11,32 @@ import UIKit
 
 class QuizBrain {
     
-    private var correctAnswer: String
-    private var secondAnswer: String
-    private var thirdAnswer: String
-    private var fourthAnswer: String
+    private var correctAnswer: Sign
+    private var secondAnswer: Sign
+    private var thirdAnswer: Sign
+    private var fourthAnswer: Sign
     
     // Constants representing the filenames of the images used
-    private struct StringConstants {
-        static let STOP = "Stop"
-        static let DNE = "Do not enter"
-        static let NOPASS = "No passing allowed at any time"
-        static let NOPED = "No pedestrians allowed on roadway"
-        static let NOLEFT = "No left turn at intersection"
-        static let Stop = "stopSign.jpg"
-        static let NoPassing = "noPassing.jpg"
-        static let DoNotEnter = "dne.jpg"
-        static let NoPedestrians = "noPedestrians.jpg"
-        static let NoLeftTurn = "noLeftTurn.jpg"
-    }
-    
-    // Bank of questions, first string would be correct answer, second string would correspond to an image
-    private var questionBank: Dictionary<String, String> = [
-        StringConstants.STOP: StringConstants.Stop,
-        StringConstants.DNE: StringConstants.DoNotEnter,
-        StringConstants.NOPASS: StringConstants.NoPassing,
-        StringConstants.NOPED: StringConstants.NoPedestrians,
-        StringConstants.NOLEFT: StringConstants.NoLeftTurn
-    ]
+
+    let questions: [Sign] = [Sign.Stop, Sign.DoNotEnter, Sign.NoPass, Sign.NoPed, Sign.NoPed]
     
     init() {
-        correctAnswer = StringConstants.STOP
-        secondAnswer = StringConstants.DNE
-        thirdAnswer = StringConstants.NOPASS
-        fourthAnswer = StringConstants.NOPED
+        correctAnswer = questions[0]
+        secondAnswer = questions[1]
+        thirdAnswer = questions[2]
+        fourthAnswer = questions[3]
     }
     
     // called by QuizViewController when "Next question" button is clicked
     // returns rng question, correct answer to the question, and 3 random incorrect answers
-    func askQuestion() -> (String, String, String, String){
+    func askQuestion() -> (Sign, Sign, Sign, Sign){
         // TODO: gets random question from questionBank
         
-        let randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
-        
-        correctAnswer = Array(questionBank.keys)[randomIndex]
-        secondAnswer = Array(questionBank.keys)[(randomIndex+1) % 4]
-        thirdAnswer = Array(questionBank.keys)[(randomIndex+2) % 4]
-        fourthAnswer = Array(questionBank.keys)[(randomIndex+3) % 4]
+        let randomIndex = Int(arc4random_uniform(UInt32(questions.count)))
+        correctAnswer = questions[randomIndex]
+        secondAnswer = questions[(randomIndex+1) % questions.count]
+        thirdAnswer = questions[(randomIndex+2) % questions.count]
+        fourthAnswer = questions[(randomIndex+3) % questions.count]
         
         return (correctAnswer, secondAnswer, thirdAnswer, fourthAnswer)
     }
@@ -64,9 +44,8 @@ class QuizBrain {
     // checks answer
     func checkAnswer(givenAnswerFromUser: AnyObject) -> Bool {
         let givenAnswerButton = givenAnswerFromUser as! UIButton
-        let givenAnswer = givenAnswerButton.titleLabel
-        return givenAnswer == correctAnswer
-        
+        let givenAnswer = givenAnswerButton.currentTitle
+        return givenAnswer! == correctAnswer.rawValue
     }
     
     // finishes current quiz
