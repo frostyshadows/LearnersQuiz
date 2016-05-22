@@ -18,7 +18,7 @@ class QuizBrain {
     
     // Constants representing the filenames of the images used
 
-    let questions: [Sign] = [Sign.Stop, Sign.DoNotEnter, Sign.NoPass, Sign.NoPed, Sign.NoPed]
+    let questions: [Sign] = [Sign.Stop, Sign.DoNotEnter, Sign.NoPass, Sign.NoPed, Sign.NoLeft]
     
     init() {
         correctAnswer = questions[0]

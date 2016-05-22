@@ -54,13 +54,13 @@ class QuizViewController: UIViewController {
         // sets textBox to show question
         mainTextBox.text = questionBank[qAndA.0]
         
-        ans1Button.setTitle("\(qAndA.0)", forState: UIControlState.Normal)
+        ans1Button.setTitle(qAndA.0.rawValue, forState: UIControlState.Normal)
         
-        ans2Button.setTitle("\(qAndA.1)", forState: UIControlState.Normal)
+        ans2Button.setTitle(qAndA.1.rawValue, forState: UIControlState.Normal)
         
-        ans3Button.setTitle("\(qAndA.2)", forState: UIControlState.Normal)
+        ans3Button.setTitle(qAndA.2.rawValue, forState: UIControlState.Normal)
         
-        ans4Button.setTitle("\(qAndA.3)", forState: UIControlState.Normal)
+        ans4Button.setTitle(qAndA.3.rawValue, forState: UIControlState.Normal)
         
     }
     
