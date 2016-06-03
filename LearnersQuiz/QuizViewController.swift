@@ -17,13 +17,30 @@ class QuizViewController: UIViewController {
     
     private var numQuestions = 0
     
+    private struct StringConstants {
+        static let Stop = "stopSign.jpg"
+        static let NoPassing = "noPassing.jpg"
+        static let DoNotEnter = "dne.jpg"
+        static let NoPedestrians = "noPedestrians.jpg"
+        static let NoLeftTurn = "noLeftTurn.jpg"
+    }
+    
+    // Bank of questions, first string would be correct answer, second string would correspond to an image
+    private var questionBank: Dictionary<Sign, String> = [
+        Sign.Stop: StringConstants.Stop,
+        Sign.DoNotEnter: StringConstants.DoNotEnter,
+        Sign.NoPass: StringConstants.NoPassing,
+        Sign.NoPed: StringConstants.NoPedestrians,
+        Sign.NoLeft: StringConstants.NoLeftTurn
+    ]
+    
     @IBOutlet weak var ans1Button: UIButton!
     @IBOutlet weak var ans2Button: UIButton!
     @IBOutlet weak var ans3Button: UIButton!
     @IBOutlet weak var ans4Button: UIButton!
     
     @IBAction func AnswerButton(sender: AnyObject) {
-        if brain.checkAnswer(sender) == true {
+        if brain.checkAnswer(sender) {
             mainTextBox.text = "Good job!"
         } else {
             mainTextBox.text = "Better luck next time"
@@ -35,15 +52,15 @@ class QuizViewController: UIViewController {
         // qAndA will be a tuple
         let qAndA = brain.askQuestion()
         // sets textBox to show question
-        mainTextBox.text = qAndA.0
+        mainTextBox.text = questionBank[qAndA.0]
         
-        ans1Button.setTitle("\(qAndA.1)", forState: UIControlState.Normal)
+        ans1Button.setTitle(qAndA.0.rawValue, forState: UIControlState.Normal)
         
-        ans2Button.setTitle("\(qAndA.2)", forState: UIControlState.Normal)
+        ans2Button.setTitle(qAndA.1.rawValue, forState: UIControlState.Normal)
         
-        ans3Button.setTitle("\(qAndA.3)", forState: UIControlState.Normal)
+        ans3Button.setTitle(qAndA.2.rawValue, forState: UIControlState.Normal)
         
-        ans4Button.setTitle("\(qAndA.4)", forState: UIControlState.Normal)
+        ans4Button.setTitle(qAndA.3.rawValue, forState: UIControlState.Normal)
         
     }
     
