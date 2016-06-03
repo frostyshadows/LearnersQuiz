@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" standalone="no"?>
-<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10116" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
+<document type="com.apple.InterfaceBuilder3.CocoaTouch.Storyboard.XIB" version="3.0" toolsVersion="10117" systemVersion="15E65" targetRuntime="iOS.CocoaTouch" propertyAccessControl="none" useAutolayout="YES" useTraitCollections="YES" initialViewController="BYZ-38-t0r">
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
@@ -28,8 +28,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Answer 1"/>
                                 <connections>
-                                    <action selector="AnswerOneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tYk-hx-81Q"/>
-                                    <action selector="NextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DW7-SM-35d"/>
+                                    <action selector="AnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="CWE-vK-427"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ayC-fk-CIH">
@@ -37,18 +36,7 @@
                                 <fontDescription key="fontDescription" type="system" pointSize="20"/>
                                 <state key="normal" title="Answer 2"/>
                                 <connections>
-                                    <action selector="AnswerOneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="BlV-KC-rjF"/>
-                                    <action selector="NextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="NJa-dP-La9"/>
-                                </connections>
-                            </button>
-                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goA-Gw-TY6">
-                                <rect key="frame" x="257" y="285" width="85" height="36"/>
-                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
-                                <state key="normal" title="Answer 3"/>
-                                <connections>
-                                    <action selector="AnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kG3-ym-eWe"/>
-                                    <action selector="AnswerOneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="tck-C2-3iR"/>
-                                    <action selector="NextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="DwH-5s-Z4j"/>
+                                    <action selector="AnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="o2R-mo-tg2"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="ZoV-iF-0Vt">
@@ -57,8 +45,6 @@
                                 <state key="normal" title="Answer 4"/>
                                 <connections>
                                     <action selector="AnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="G0f-2R-ziq"/>
-                                    <action selector="AnswerOneButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="OXg-Ua-PMl"/>
-                                    <action selector="NextButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="8ce-3X-GXO"/>
                                 </connections>
                             </button>
                             <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="gbo-fw-dEZ">
@@ -67,6 +53,14 @@
                                 <state key="normal" title="Next Question"/>
                                 <connections>
                                     <action selector="nextQuestion" destination="BYZ-38-t0r" eventType="touchUpInside" id="6SC-pv-SSa"/>
+                                </connections>
+                            </button>
+                            <button opaque="NO" contentMode="scaleToFill" contentHorizontalAlignment="center" contentVerticalAlignment="center" buttonType="roundedRect" lineBreakMode="middleTruncation" translatesAutoresizingMaskIntoConstraints="NO" id="goA-Gw-TY6">
+                                <rect key="frame" x="257" y="285" width="85" height="36"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <state key="normal" title="Answer 3"/>
+                                <connections>
+                                    <action selector="AnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kG3-ym-eWe"/>
                                 </connections>
                             </button>
                         </subviews>

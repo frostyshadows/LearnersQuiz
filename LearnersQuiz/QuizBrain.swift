@@ -31,7 +31,7 @@ class QuizBrain {
     
     // ideally the first question would be random too
     init(){
-        currentQuestion = "stopSign.jpg"
+        currentQuestion = StringConstants.Stop
         currentCorrectAnswer = "Stop"
         currentSign = StringConstants.Stop
         FirstAnswer = "Do not enter"
@@ -73,7 +73,8 @@ class QuizBrain {
     
     // checks answer
     func checkAnswer(givenAnswerFromUser: AnyObject) -> Bool {
-        let givenAnswer = givenAnswerFromUser as! String
+        let givenAnswerButton = givenAnswerFromUser as! UIButton
+        let givenAnswer = givenAnswerButton.titleLabel
         if givenAnswer == currentCorrectAnswer {
             return true
         }
