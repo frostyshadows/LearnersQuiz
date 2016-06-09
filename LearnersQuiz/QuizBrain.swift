@@ -15,6 +15,10 @@ class QuizBrain {
     private var secondAnswer: Sign
     private var thirdAnswer: Sign
     private var fourthAnswer: Sign
+    private var readyForAnswer: Bool
+    private var selectedCorrect: Bool
+    internal var currentScore = 0
+    internal let totalScore = 20
     
     // Constants representing the filenames of the images used
 
@@ -25,12 +29,16 @@ class QuizBrain {
         secondAnswer = questions[1]
         thirdAnswer = questions[2]
         fourthAnswer = questions[3]
+        readyForAnswer = true
+        selectedCorrect = false
     }
     
     // called by QuizViewController when "Next question" button is clicked
     // returns rng question, correct answer to the question, and 3 random incorrect answers
     func askQuestion() -> (Sign, Sign, Sign, Sign){
         // TODO: gets random question from questionBank
+        
+        readyForAnswer = true
         
         let randomIndex = Int(arc4random_uniform(UInt32(questions.count)))
         correctAnswer = questions[randomIndex]
@@ -43,10 +51,26 @@ class QuizBrain {
     
     // checks answer
     func checkAnswer(givenAnswerFromUser: AnyObject) -> Bool {
-        let givenAnswerButton = givenAnswerFromUser as! UIButton
-        let givenAnswer = givenAnswerButton.currentTitle
-        return givenAnswer! == correctAnswer.rawValue
+        if readyForAnswer {
+            let givenAnswerButton = givenAnswerFromUser as! UIButton
+            let givenAnswer = givenAnswerButton.currentTitle
+            readyForAnswer = false
+            let correct = givenAnswer! == correctAnswer.rawValue
+            selectedCorrect = correct
+            if selectedCorrect {
+                currentScore = currentScore + 1
+            }
+        }
+        return selectedCorrect
     }
+    
+//    func getCurrentScore() -> Int {
+//        return currentScore
+//    }
+//    
+//    func incrementCurrentScore() {
+//        currentScore += 1
+//    }
     
     // finishes current quiz
 //    func finishCurrentQuiz() {

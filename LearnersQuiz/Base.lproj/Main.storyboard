@@ -3,6 +3,7 @@
     <dependencies>
         <deployment identifier="iOS"/>
         <plugIn identifier="com.apple.InterfaceBuilder.IBCocoaTouchPlugin" version="10085"/>
+        <capability name="Constraints to layout margins" minToolsVersion="6.0"/>
     </dependencies>
     <scenes>
         <!--Quiz View Controller-->
@@ -63,6 +64,12 @@
                                     <action selector="AnswerButton:" destination="BYZ-38-t0r" eventType="touchUpInside" id="kG3-ym-eWe"/>
                                 </connections>
                             </button>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="1/20" textAlignment="natural" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="2kp-Fy-KDy">
+                                <rect key="frame" x="546" y="28" width="34" height="21"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="17"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
@@ -71,10 +78,12 @@
                             <constraint firstItem="VXc-jl-tG6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="79" id="CEr-Kx-ohi"/>
                             <constraint firstItem="ZoV-iF-0Vt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CiQ-cb-rQ1"/>
                             <constraint firstItem="gbo-fw-dEZ" firstAttribute="top" secondItem="ZoV-iF-0Vt" secondAttribute="bottom" constant="8" id="DJ1-fX-3B4"/>
+                            <constraint firstItem="2kp-Fy-KDy" firstAttribute="trailing" secondItem="8bC-Xf-vdC" secondAttribute="trailingMargin" id="ElL-WH-y57"/>
                             <constraint firstItem="goA-Gw-TY6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="FcL-6n-aFb"/>
                             <constraint firstItem="UZx-BX-4fK" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="HRV-ua-pTT"/>
                             <constraint firstItem="VXc-jl-tG6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="JWa-gR-HH1"/>
                             <constraint firstItem="gbo-fw-dEZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PIS-SC-U0j"/>
+                            <constraint firstItem="2kp-Fy-KDy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="QR3-lh-r13"/>
                             <constraint firstItem="VXc-jl-tG6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bHZ-Gh-XfP"/>
                             <constraint firstItem="ZoV-iF-0Vt" firstAttribute="top" secondItem="goA-Gw-TY6" secondAttribute="bottom" constant="8" id="k1Z-KG-pgU"/>
                             <constraint firstItem="ayC-fk-CIH" firstAttribute="top" secondItem="UZx-BX-4fK" secondAttribute="bottom" constant="8" id="l1e-Jc-INu"/>
@@ -88,6 +97,7 @@
                         <outlet property="ans3Button" destination="goA-Gw-TY6" id="Ed3-0w-ULF"/>
                         <outlet property="ans4Button" destination="ZoV-iF-0Vt" id="Cae-5x-bmq"/>
                         <outlet property="mainTextBox" destination="VXc-jl-tG6" id="IhQ-KO-2k5"/>
+                        <outlet property="questionCounter" destination="2kp-Fy-KDy" id="gWY-IY-blr"/>
                         <segue destination="hIX-IQ-Qlp" kind="show" identifier="finishScreenSegue" id="EdG-Da-a7v"/>
                     </connections>
                 </viewController>

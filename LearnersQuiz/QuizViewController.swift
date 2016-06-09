@@ -12,11 +12,13 @@ class QuizViewController: UIViewController {
 
 
     @IBOutlet weak var mainTextBox: UILabel!
+    @IBOutlet weak var questionCounter: UILabel!
     
     private var brain = QuizBrain()
     
+    private var totalQuestions = 20
     private var numQuestions = 0
-    private var numCorrect = 0
+//    private var numCorrect = 0
     
     private struct StringConstants {
         static let Stop = "stopSign.jpg"
@@ -43,11 +45,16 @@ class QuizViewController: UIViewController {
     @IBAction func AnswerButton(sender: AnyObject) {
         if brain.checkAnswer(sender) {
             mainTextBox.text = "Good job!"
-            numCorrect += 1
+            brain.currentScore += 1
         } else {
             mainTextBox.text = "Better luck next time"
         }
         
+    }
+    
+    override func viewDidLoad() {
+        super.viewDidLoad()
+        nextQuestion()
     }
     
     @IBAction func nextQuestion() {
@@ -64,8 +71,9 @@ class QuizViewController: UIViewController {
         
         ans4Button.setTitle(qAndA.3.rawValue, forState: UIControlState.Normal)
         
-        if numQuestions < 20 {
+        if numQuestions < totalQuestions {
             numQuestions += 1
+            questionCounter.text = "\(numQuestions)/\(totalQuestions)"
         } else {
             performSegueWithIdentifier("finishScreenSegue", sender: nil)
             //finishCurrentQuiz()
@@ -76,7 +84,7 @@ class QuizViewController: UIViewController {
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "finishScreenSegue" {
             let nextViewController = segue.destinationViewController as! FinishScreenViewController
-            nextViewController.score = numCorrect
+            nextViewController.score = brain.currentScore
         }
     }
     
