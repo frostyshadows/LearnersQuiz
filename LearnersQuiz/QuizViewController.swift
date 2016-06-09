@@ -67,14 +67,22 @@ class QuizViewController: UIViewController {
         if numQuestions < 20 {
             numQuestions += 1
         } else {
-            finishCurrentQuiz()
+            performSegueWithIdentifier("finishScreenSegue", sender: nil)
+            //finishCurrentQuiz()
         }
         
     }
     
-    func finishCurrentQuiz() {
-        mainTextBox.text = "Quiz finished! You got \(numCorrect) / 20"
+    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+        if segue.identifier == "finishScreenSegue" {
+            let nextViewController = segue.destinationViewController as! FinishScreenViewController
+            nextViewController.score = numCorrect
+        }
     }
+    
+//    func finishCurrentQuiz() {
+//        mainTextBox.text = "Quiz finished! You got \(numCorrect) / 20"
+//    }
     
 }
 

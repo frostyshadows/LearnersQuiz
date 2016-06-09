@@ -88,11 +88,45 @@
                         <outlet property="ans3Button" destination="goA-Gw-TY6" id="Ed3-0w-ULF"/>
                         <outlet property="ans4Button" destination="ZoV-iF-0Vt" id="Cae-5x-bmq"/>
                         <outlet property="mainTextBox" destination="VXc-jl-tG6" id="IhQ-KO-2k5"/>
+                        <segue destination="hIX-IQ-Qlp" kind="show" identifier="finishScreenSegue" id="EdG-Da-a7v"/>
                     </connections>
                 </viewController>
                 <placeholder placeholderIdentifier="IBFirstResponder" id="dkx-z0-nzr" sceneMemberID="firstResponder"/>
             </objects>
             <point key="canvasLocation" x="350" y="305"/>
+        </scene>
+        <!--Finish Screen View Controller-->
+        <scene sceneID="OIR-G0-tVb">
+            <objects>
+                <viewController id="hIX-IQ-Qlp" customClass="FinishScreenViewController" customModule="LearnersQuiz" customModuleProvider="target" sceneMemberID="viewController">
+                    <layoutGuides>
+                        <viewControllerLayoutGuide type="top" id="x3M-eA-snq"/>
+                        <viewControllerLayoutGuide type="bottom" id="JIQ-aQ-ZdU"/>
+                    </layoutGuides>
+                    <view key="view" contentMode="scaleToFill" id="1yS-cq-115">
+                        <rect key="frame" x="0.0" y="0.0" width="600" height="600"/>
+                        <autoresizingMask key="autoresizingMask" widthSizable="YES" heightSizable="YES"/>
+                        <subviews>
+                            <label opaque="NO" userInteractionEnabled="NO" contentMode="left" horizontalHuggingPriority="251" verticalHuggingPriority="251" text="Final Score" textAlignment="center" lineBreakMode="tailTruncation" baselineAdjustment="alignBaselines" adjustsFontSizeToFit="NO" translatesAutoresizingMaskIntoConstraints="NO" id="RBb-We-wqS">
+                                <rect key="frame" x="251" y="288" width="99" height="24"/>
+                                <fontDescription key="fontDescription" type="system" pointSize="20"/>
+                                <color key="textColor" cocoaTouchSystemColor="darkTextColor"/>
+                                <nil key="highlightedColor"/>
+                            </label>
+                        </subviews>
+                        <color key="backgroundColor" white="1" alpha="1" colorSpace="calibratedWhite"/>
+                        <constraints>
+                            <constraint firstItem="RBb-We-wqS" firstAttribute="centerX" secondItem="1yS-cq-115" secondAttribute="centerX" id="aPm-yu-EKW"/>
+                            <constraint firstItem="RBb-We-wqS" firstAttribute="centerY" secondItem="1yS-cq-115" secondAttribute="centerY" id="b8J-5C-RTq"/>
+                        </constraints>
+                    </view>
+                    <connections>
+                        <outlet property="finalScoreLabel" destination="RBb-We-wqS" id="rRJ-To-ZOc"/>
+                    </connections>
+                </viewController>
+                <placeholder placeholderIdentifier="IBFirstResponder" id="9GY-li-XyS" userLabel="First Responder" sceneMemberID="firstResponder"/>
+            </objects>
+            <point key="canvasLocation" x="1003" y="303"/>
         </scene>
     </scenes>
 </document>
