@@ -16,6 +16,7 @@ class QuizViewController: UIViewController {
     private var brain = QuizBrain()
     
     private var numQuestions = 0
+    private var numCorrect = 0
     
     private struct StringConstants {
         static let Stop = "stopSign.jpg"
@@ -42,6 +43,7 @@ class QuizViewController: UIViewController {
     @IBAction func AnswerButton(sender: AnyObject) {
         if brain.checkAnswer(sender) {
             mainTextBox.text = "Good job!"
+            numCorrect += 1
         } else {
             mainTextBox.text = "Better luck next time"
         }
@@ -62,15 +64,18 @@ class QuizViewController: UIViewController {
         
         ans4Button.setTitle(qAndA.3.rawValue, forState: UIControlState.Normal)
         
+        if numQuestions < 20 {
+            numQuestions += 1
+        } else {
+            finishCurrentQuiz()
+        }
+        
     }
     
-        
-  //      if numQuestions < 20 {
-  //          brain.askQuestion()
-  //          numQuestions += 1
-  //      } else {
-  //          brain.finishCurrentQuiz()
-  //      }
+    func finishCurrentQuiz() {
+        mainTextBox.text = "Quiz finished! You got \(numCorrect) / 20"
+    }
+    
 }
 
 

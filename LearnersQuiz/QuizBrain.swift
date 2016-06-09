@@ -49,9 +49,10 @@ class QuizBrain {
     }
     
     // finishes current quiz
-    func finishCurrentQuiz() {
-        
-    }
+//    func finishCurrentQuiz() {
+//        
+//        
+//    }
     
     //returns a random sign
     //func getRandomQuestion() -> String {
