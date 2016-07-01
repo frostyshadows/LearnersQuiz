@@ -21,25 +21,6 @@ class QuizViewController: UIViewController {
     private var numQuestions = 0
 //    private var numCorrect = 0
     
-    // TODO: This stuff will get really long later on, should put it in separate file (mb Constants)
-    private struct StringConstants {
-        static let Stop = "stopSign.jpg"
-        static let NoPassing = "noPassing.jpg"
-        static let DoNotEnter = "dne.jpg"
-        static let NoPedestrians = "noPedestrians.jpg"
-        static let NoLeftTurn = "noLeftTurn.jpg"
-    }
-    
-    // Bank of questions, first string would be correct answer, second string would correspond to an image
-    // TODO: Also consider putting in separate file
-    private var questionBank: Dictionary<Sign, String> = [
-        Sign.Stop: StringConstants.Stop,
-        Sign.DoNotEnter: StringConstants.DoNotEnter,
-        Sign.NoPass: StringConstants.NoPassing,
-        Sign.NoPed: StringConstants.NoPedestrians,
-        Sign.NoLeft: StringConstants.NoLeftTurn
-    ]
-    
     @IBOutlet weak var ans1Button: UIButton!
     @IBOutlet weak var ans2Button: UIButton!
     @IBOutlet weak var ans3Button: UIButton!

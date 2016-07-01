@@ -35,16 +35,16 @@ class QuizModel {
     // called by QuizViewController when "Next question" button is clicked
     // returns rng question, correct answer to the question, and 3 random incorrect answers
     func askQuestion() -> (Sign, Sign, Sign, Sign){
-        // TODO: gets random question from questionBank
-        
+
         readyForAnswer = true
         
-        let randomIndex = Int(arc4random_uniform(UInt32(questions.count)))
-        correctAnswer = questions[randomIndex]
-        secondAnswer = questions[(randomIndex+1) % questions.count]
-        thirdAnswer = questions[(randomIndex+2) % questions.count]
-        fourthAnswer = questions[(randomIndex+3) % questions.count]
+        let randomIndex1 = Int(arc4random_uniform(UInt32(questions.count)))
+        correctAnswer = questions[randomIndex1]
+        secondAnswer = questions[(randomIndex1+1) % questions.count]
+        thirdAnswer = questions[(randomIndex1+2) % questions.count]
+        fourthAnswer = questions[(randomIndex1+3) % questions.count]
         
+        // TODO: instead of correctAnswer always returned first, add another RNG to switch up order of the tuple
         return (correctAnswer, secondAnswer, thirdAnswer, fourthAnswer)
     }
     

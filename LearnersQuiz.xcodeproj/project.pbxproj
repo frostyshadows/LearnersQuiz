@@ -7,6 +7,8 @@
 	objects = {
 
 /* Begin PBXBuildFile section */
+		431D350C1D271E9A00AA78E6 /* StringConstants.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D350B1D271E9A00AA78E6 /* StringConstants.swift */; };
+		431D350E1D271F7800AA78E6 /* QuestionBank.swift in Sources */ = {isa = PBXBuildFile; fileRef = 431D350D1D271F7800AA78E6 /* QuestionBank.swift */; };
 		43705B921D0A25E60041A5B4 /* FinishScreenViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43705B911D0A25E60041A5B4 /* FinishScreenViewController.swift */; };
 		43BEC0A81CE9778F00CA2896 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEC0A71CE9778F00CA2896 /* AppDelegate.swift */; };
 		43BEC0AA1CE9778F00CA2896 /* QuizViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEC0A91CE9778F00CA2896 /* QuizViewController.swift */; };
@@ -18,6 +20,8 @@
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
+		431D350B1D271E9A00AA78E6 /* StringConstants.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StringConstants.swift; sourceTree = "<group>"; };
+		431D350D1D271F7800AA78E6 /* QuestionBank.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuestionBank.swift; sourceTree = "<group>"; };
 		43705B911D0A25E60041A5B4 /* FinishScreenViewController.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = FinishScreenViewController.swift; sourceTree = "<group>"; };
 		43BEC0A41CE9778F00CA2896 /* LearnersQuiz.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = LearnersQuiz.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		43BEC0A71CE9778F00CA2896 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
@@ -41,6 +45,33 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
+		431D35101D27209600AA78E6 /* Data */ = {
+			isa = PBXGroup;
+			children = (
+				431D350D1D271F7800AA78E6 /* QuestionBank.swift */,
+				431D350B1D271E9A00AA78E6 /* StringConstants.swift */,
+				CD8532711CF160B6000DDBB8 /* Sign.swift */,
+			);
+			name = Data;
+			sourceTree = "<group>";
+		};
+		431D35121D2720D400AA78E6 /* View Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				43BEC0A91CE9778F00CA2896 /* QuizViewController.swift */,
+				43705B911D0A25E60041A5B4 /* FinishScreenViewController.swift */,
+			);
+			name = "View Controllers";
+			sourceTree = "<group>";
+		};
+		431D35131D2720F700AA78E6 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				43BEC0B91CE97A9400CA2896 /* QuizModel.swift */,
+			);
+			name = Models;
+			sourceTree = "<group>";
+		};
 		43BEC09B1CE9778F00CA2896 = {
 			isa = PBXGroup;
 			children = (
@@ -61,11 +92,10 @@
 			isa = PBXGroup;
 			children = (
 				43BEC0A71CE9778F00CA2896 /* AppDelegate.swift */,
-				43BEC0A91CE9778F00CA2896 /* QuizViewController.swift */,
-				43BEC0B91CE97A9400CA2896 /* QuizModel.swift */,
-				CD8532711CF160B6000DDBB8 /* Sign.swift */,
+				431D35131D2720F700AA78E6 /* Models */,
+				431D35121D2720D400AA78E6 /* View Controllers */,
+				431D35101D27209600AA78E6 /* Data */,
 				43BEC0AB1CE9778F00CA2896 /* Main.storyboard */,
-				43705B911D0A25E60041A5B4 /* FinishScreenViewController.swift */,
 				43BEC0AE1CE9778F00CA2896 /* Assets.xcassets */,
 				43BEC0B01CE9778F00CA2896 /* LaunchScreen.storyboard */,
 				43BEC0B31CE9778F00CA2896 /* Info.plist */,
@@ -149,6 +179,8 @@
 				CD8532721CF160B6000DDBB8 /* Sign.swift in Sources */,
 				43705B921D0A25E60041A5B4 /* FinishScreenViewController.swift in Sources */,
 				43BEC0A81CE9778F00CA2896 /* AppDelegate.swift in Sources */,
+				431D350C1D271E9A00AA78E6 /* StringConstants.swift in Sources */,
+				431D350E1D271F7800AA78E6 /* QuestionBank.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

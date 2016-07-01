@@ -16,7 +16,7 @@ class FinishScreenViewController: UIViewController {
     
     override func viewDidLoad() {
         super.viewDidLoad()
-        finalScoreLabel.text = "Quiz finished! Your score is \(score) / 20"
+        finalScoreLabel.text = "Quiz finished! Your score is \(score) / 5"
 
         // Do any additional setup after loading the view.
     }
