@@ -13,7 +13,7 @@
 		43BEC0AD1CE9778F00CA2896 /* Main.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BEC0AB1CE9778F00CA2896 /* Main.storyboard */; };
 		43BEC0AF1CE9778F00CA2896 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 43BEC0AE1CE9778F00CA2896 /* Assets.xcassets */; };
 		43BEC0B21CE9778F00CA2896 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = 43BEC0B01CE9778F00CA2896 /* LaunchScreen.storyboard */; };
-		43BEC0BA1CE97A9400CA2896 /* QuizBrain.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEC0B91CE97A9400CA2896 /* QuizBrain.swift */; };
+		43BEC0BA1CE97A9400CA2896 /* QuizModel.swift in Sources */ = {isa = PBXBuildFile; fileRef = 43BEC0B91CE97A9400CA2896 /* QuizModel.swift */; };
 		CD8532721CF160B6000DDBB8 /* Sign.swift in Sources */ = {isa = PBXBuildFile; fileRef = CD8532711CF160B6000DDBB8 /* Sign.swift */; };
 /* End PBXBuildFile section */
 
@@ -26,7 +26,7 @@
 		43BEC0AE1CE9778F00CA2896 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		43BEC0B11CE9778F00CA2896 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
 		43BEC0B31CE9778F00CA2896 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
-		43BEC0B91CE97A9400CA2896 /* QuizBrain.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizBrain.swift; sourceTree = "<group>"; };
+		43BEC0B91CE97A9400CA2896 /* QuizModel.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = QuizModel.swift; sourceTree = "<group>"; };
 		CD8532711CF160B6000DDBB8 /* Sign.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Sign.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
@@ -62,7 +62,7 @@
 			children = (
 				43BEC0A71CE9778F00CA2896 /* AppDelegate.swift */,
 				43BEC0A91CE9778F00CA2896 /* QuizViewController.swift */,
-				43BEC0B91CE97A9400CA2896 /* QuizBrain.swift */,
+				43BEC0B91CE97A9400CA2896 /* QuizModel.swift */,
 				CD8532711CF160B6000DDBB8 /* Sign.swift */,
 				43BEC0AB1CE9778F00CA2896 /* Main.storyboard */,
 				43705B911D0A25E60041A5B4 /* FinishScreenViewController.swift */,
@@ -145,7 +145,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				43BEC0AA1CE9778F00CA2896 /* QuizViewController.swift in Sources */,
-				43BEC0BA1CE97A9400CA2896 /* QuizBrain.swift in Sources */,
+				43BEC0BA1CE97A9400CA2896 /* QuizModel.swift in Sources */,
 				CD8532721CF160B6000DDBB8 /* Sign.swift in Sources */,
 				43705B921D0A25E60041A5B4 /* FinishScreenViewController.swift in Sources */,
 				43BEC0A81CE9778F00CA2896 /* AppDelegate.swift in Sources */,

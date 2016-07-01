@@ -9,7 +9,7 @@
 import Foundation
 import UIKit
 
-class QuizBrain {
+class QuizModel {
     
     private var correctAnswer: Sign
     private var secondAnswer: Sign
@@ -18,7 +18,6 @@ class QuizBrain {
     private var readyForAnswer: Bool
     private var selectedCorrect: Bool
     internal var currentScore = 0
-    internal let totalScore = 20
     
     // Constants representing the filenames of the images used
 

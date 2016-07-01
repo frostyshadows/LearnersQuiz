@@ -14,12 +14,14 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var mainTextBox: UILabel!
     @IBOutlet weak var questionCounter: UILabel!
     
-    private var brain = QuizBrain()
+    private var brain = QuizModel()
     
-    private var totalQuestions = 20
+    // totalQuestions should be 20 when we're done but 5 makes it easier to test
+    private var totalQuestions = 5
     private var numQuestions = 0
 //    private var numCorrect = 0
     
+    // TODO: This stuff will get really long later on, should put it in separate file (mb Constants)
     private struct StringConstants {
         static let Stop = "stopSign.jpg"
         static let NoPassing = "noPassing.jpg"
@@ -29,6 +31,7 @@ class QuizViewController: UIViewController {
     }
     
     // Bank of questions, first string would be correct answer, second string would correspond to an image
+    // TODO: Also consider putting in separate file
     private var questionBank: Dictionary<Sign, String> = [
         Sign.Stop: StringConstants.Stop,
         Sign.DoNotEnter: StringConstants.DoNotEnter,
@@ -45,7 +48,6 @@ class QuizViewController: UIViewController {
     @IBAction func AnswerButton(sender: AnyObject) {
         if brain.checkAnswer(sender) {
             mainTextBox.text = "Good job!"
-            brain.currentScore += 1
         } else {
             mainTextBox.text = "Better luck next time"
         }
