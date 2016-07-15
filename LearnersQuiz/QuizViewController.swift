@@ -42,17 +42,18 @@ class QuizViewController: UIViewController {
     
     @IBAction func nextQuestion() {
         // qAndA will be a tuple
-        let qAndA = brain.askQuestion()
+        let qAndA = brain.askQuestion().1
+        let indices = brain.askQuestion().0
         // sets textBox to show question
-        mainTextBox.text = questionBank[qAndA.0]
+        mainTextBox.text = questionBank[qAndA[indices[0] as! Int]]
         
-        ans1Button.setTitle(qAndA.0.rawValue, forState: UIControlState.Normal)
+        ans1Button.setTitle(qAndA[indices[0] as! Int].rawValue, forState: UIControlState.Normal)
         
-        ans2Button.setTitle(qAndA.1.rawValue, forState: UIControlState.Normal)
+        ans2Button.setTitle(qAndA[indices[1] as! Int].rawValue, forState: UIControlState.Normal)
         
-        ans3Button.setTitle(qAndA.2.rawValue, forState: UIControlState.Normal)
+        ans3Button.setTitle(qAndA[indices[2] as! Int].rawValue, forState: UIControlState.Normal)
         
-        ans4Button.setTitle(qAndA.3.rawValue, forState: UIControlState.Normal)
+        ans4Button.setTitle(qAndA[indices[3] as! Int].rawValue, forState: UIControlState.Normal)
         
         if numQuestions < totalQuestions {
             numQuestions += 1

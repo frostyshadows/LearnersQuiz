@@ -35,8 +35,8 @@ class QuizModel {
     
     // called by QuizViewController when "Next question" button is clicked
     // returns rng question, correct answer to the question, and 3 random incorrect answers
-    func askQuestion() -> (Sign, Sign, Sign, Sign){
-        
+    func askQuestion() -> ([AnyObject], [Sign]){
+
         readyForAnswer = true
         
         let randomIndex1 = Int(arc4random_uniform(UInt32(questions.count)))
@@ -45,8 +45,21 @@ class QuizModel {
         thirdAnswer = questions[(randomIndex1+2) % questions.count]
         fourthAnswer = questions[(randomIndex1+3) % questions.count]
         
+        
         // TODO: instead of correctAnswer always returned first, add another RNG to switch up order of the tuple
-        return (correctAnswer, secondAnswer, thirdAnswer, fourthAnswer)
+        
+        let signArray = [correctAnswer, secondAnswer, thirdAnswer, fourthAnswer]
+        
+        var numbersToRandomize = [0 as AnyObject, 1 as AnyObject, 2 as AnyObject, 3 as AnyObject]
+        
+        numbersToRandomize = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(numbersToRandomize)
+//        
+//        let signsToReturn = [signArray[numbersToRandomize[0] as! Int],
+//                             signArray[numbersToRandomize[1] as! Int],
+//                             signArray[numbersToRandomize[2] as! Int],
+//                             signArray[numbersToRandomize[3] as! Int]]
+        
+        return (numbersToRandomize, signArray)
     }
     
     
@@ -64,4 +77,24 @@ class QuizModel {
         }
         return selectedCorrect
     }
+    
+//    func getCurrentScore() -> Int {
+//        return currentScore
+//    }
+//    
+//    func incrementCurrentScore() {
+//        currentScore += 1
+//    }
+    
+    // finishes current quiz
+//    func finishCurrentQuiz() {
+//        
+//        
+//    }
+    
+    //returns a random sign
+    //func getRandomQuestion() -> String {
+    //    let randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
+    //    return Array(questionBank.keys)[randomIndex]
+    //}
 }
