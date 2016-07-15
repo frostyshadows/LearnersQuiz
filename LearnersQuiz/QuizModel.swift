@@ -8,6 +8,7 @@
 
 import Foundation
 import UIKit
+import GameKit
 
 class QuizModel {
     
@@ -35,7 +36,7 @@ class QuizModel {
     // called by QuizViewController when "Next question" button is clicked
     // returns rng question, correct answer to the question, and 3 random incorrect answers
     func askQuestion() -> (Sign, Sign, Sign, Sign){
-
+        
         readyForAnswer = true
         
         let randomIndex1 = Int(arc4random_uniform(UInt32(questions.count)))
@@ -47,6 +48,7 @@ class QuizModel {
         // TODO: instead of correctAnswer always returned first, add another RNG to switch up order of the tuple
         return (correctAnswer, secondAnswer, thirdAnswer, fourthAnswer)
     }
+    
     
     // checks answer
     func checkAnswer(givenAnswerFromUser: AnyObject) -> Bool {
@@ -62,24 +64,4 @@ class QuizModel {
         }
         return selectedCorrect
     }
-    
-//    func getCurrentScore() -> Int {
-//        return currentScore
-//    }
-//    
-//    func incrementCurrentScore() {
-//        currentScore += 1
-//    }
-    
-    // finishes current quiz
-//    func finishCurrentQuiz() {
-//        
-//        
-//    }
-    
-    //returns a random sign
-    //func getRandomQuestion() -> String {
-    //    let randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
-    //    return Array(questionBank.keys)[randomIndex]
-    //}
 }
