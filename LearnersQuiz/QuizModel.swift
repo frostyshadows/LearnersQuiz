@@ -35,7 +35,7 @@ class QuizModel {
     
     // called by QuizViewController when "Next question" button is clicked
     // returns rng question, correct answer to the question, and 3 random incorrect answers
-    func askQuestion() -> ([AnyObject], [Sign]){
+    func askQuestion() -> [Sign]{
 
         readyForAnswer = true
         
@@ -48,20 +48,12 @@ class QuizModel {
         
         // TODO: instead of correctAnswer always returned first, add another RNG to switch up order of the tuple
         
-        let signArray = [correctAnswer, secondAnswer, thirdAnswer, fourthAnswer]
+        let signs = [correctAnswer, secondAnswer, thirdAnswer, fourthAnswer]
         
-        var numbersToRandomize = [0 as AnyObject, 1 as AnyObject, 2 as AnyObject, 3 as AnyObject]
+        let numbers = randomizeNumbersOneToFour()
         
-        numbersToRandomize = GKRandomSource.sharedRandom().arrayByShufflingObjectsInArray(numbersToRandomize)
-//        
-//        let signsToReturn = [signArray[numbersToRandomize[0] as! Int],
-//                             signArray[numbersToRandomize[1] as! Int],
-//                             signArray[numbersToRandomize[2] as! Int],
-//                             signArray[numbersToRandomize[3] as! Int]]
-        
-        return (numbersToRandomize, signArray)
+        return [correctAnswer, signs[numbers[0]], signs[numbers[1]], signs[numbers[2]], signs[numbers[3]]]
     }
-    
     
     // checks answer
     func checkAnswer(givenAnswerFromUser: AnyObject) -> Bool {
@@ -78,23 +70,21 @@ class QuizModel {
         return selectedCorrect
     }
     
-//    func getCurrentScore() -> Int {
-//        return currentScore
-//    }
-//    
-//    func incrementCurrentScore() {
-//        currentScore += 1
-//    }
-    
-    // finishes current quiz
-//    func finishCurrentQuiz() {
-//        
-//        
-//    }
-    
-    //returns a random sign
-    //func getRandomQuestion() -> String {
-    //    let randomIndex = Int(arc4random_uniform(UInt32(questionBank.count)))
-    //    return Array(questionBank.keys)[randomIndex]
-    //}
+    func randomizeNumbersOneToFour() -> [Int] {
+        let numberOne = arc4random_uniform(4)
+        
+        var numberTwo = arc4random_uniform(4)
+        while numberOne == numberTwo {
+            numberTwo = arc4random_uniform(4)
+        }
+        var numberThree = arc4random_uniform(4)
+        while (numberOne == numberThree || numberTwo == numberThree) {
+            numberThree = arc4random_uniform(4)
+        }
+        var numberFour = arc4random_uniform(4)
+        while (numberOne == numberFour || numberTwo == numberFour || numberThree == numberFour) {
+            numberFour = arc4random_uniform(4)
+        }
+        return [Int(numberOne), Int(numberTwo), Int(numberThree), Int(numberFour)]
+    }
 }
