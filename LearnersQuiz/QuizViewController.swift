@@ -13,6 +13,7 @@ class QuizViewController: UIViewController {
 
     @IBOutlet weak var mainTextBox: UILabel!
     @IBOutlet weak var questionCounter: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     private var brain = QuizModel()
     
@@ -44,7 +45,9 @@ class QuizViewController: UIViewController {
         // qAndA will be a tuple
         let qAndA = brain.askQuestion()
         // sets textBox to show question
-        mainTextBox.text = questionBank[qAndA[0]]
+        //imageView.image = UIImage(contentsOfFile: questionBank[qAndA[0]]!)
+        imageView.image = UIImage(named: "stopSign")
+        mainTextBox.text = "Asking a question!"
         
         ans1Button.setTitle(qAndA[1].rawValue, forState: UIControlState.Normal)
         
