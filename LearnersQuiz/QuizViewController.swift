@@ -19,7 +19,7 @@ class QuizViewController: UIViewController {
     
     // totalQuestions should be 20 when we're done but 5 makes it easier to test
     private var totalQuestions = 5
-    private var numQuestions = 0
+    private var numQuestions = 1
 //    private var numCorrect = 0
     
     @IBOutlet weak var ans1Button: UIButton!
@@ -42,12 +42,11 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func nextQuestion() {
-        // qAndA will be a tuple
         let qAndA = brain.askQuestion()
         // sets textBox to show question
         //imageView.image = UIImage(contentsOfFile: questionBank[qAndA[0]]!)
         imageView.image = UIImage(named: questionBank[qAndA[0]]!)
-        mainTextBox.text = "Asking a question!"
+        mainTextBox.text = "Question \(numQuestions)"
         
         ans1Button.setTitle(qAndA[1].rawValue, forState: UIControlState.Normal)
         
@@ -60,8 +59,8 @@ class QuizViewController: UIViewController {
         
         
         if numQuestions < totalQuestions {
-            numQuestions += 1
             questionCounter.text = "\(numQuestions)/\(totalQuestions)"
+            numQuestions += 1
         } else {
             performSegueWithIdentifier("finishScreenSegue", sender: nil)
             //finishCurrentQuiz()

@@ -13,7 +13,6 @@ var questionBank: Dictionary<Sign, String> = [
     Sign.DoNotEnter: StringConstants.DoNotEnter,
     Sign.NoPass: StringConstants.NoPassing,
     Sign.NoPed: StringConstants.NoPedestrians,
-    Sign.NoLeft: StringConstants.NoLeftTurn,
     Sign.MaxSpeed: StringConstants.MaxSpeed,
     Sign.NoLeft: StringConstants.NoLeftTurn,
     Sign.OneWay: StringConstants.OneWay,
