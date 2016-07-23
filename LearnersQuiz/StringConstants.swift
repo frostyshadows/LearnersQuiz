@@ -11,7 +11,7 @@ import Foundation
 struct StringConstants {
     static let Stop = "stopSign"
     static let NoPassing = "noPassing"
-    static let DoNotEnter = "dne"
+    static let DoNotEnter = "doNotEnter"
     static let NoPedestrians = "noPedestrians"
     static let NoLeftTurn = "noLeftTurn"
 }
