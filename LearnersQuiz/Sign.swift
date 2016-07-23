@@ -36,6 +36,8 @@ enum Sign: String {
     case OneWay = "One way = gives direction of traffic on cross street"
     case WinterTires = "Winter tires or chains must be used when sign is displayed"
     case KeepRight = "Move into right lane if driving slower than regular traffic"
-    case DNP = "Do not pass"
+    case DoNotPass = "Do not pass"
+    case SchoolZone = "School zone"
+    case SlowerTrafficKeepRight = "Slower traffic keep right"
     
 }

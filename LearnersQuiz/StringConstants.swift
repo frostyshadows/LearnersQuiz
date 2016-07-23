@@ -14,4 +14,11 @@ struct StringConstants {
     static let DoNotEnter = "doNotEnter"
     static let NoPedestrians = "noPedestrians"
     static let NoLeftTurn = "noLeftTurn"
+    static let DoNotPass = "doNotPass"
+    static let MaxSpeed = "maxSpeed"
+    static let OneWay = "oneWay"
+    static let SchoolZone = "schoolZone"
+    static let SlowerTrafficKeepRight = "slowerTrafficKeepRight"
+    static let WrongWay = "wrongWay"
+    static let Yield = "yield"
 }
