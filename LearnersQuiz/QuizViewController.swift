@@ -13,6 +13,7 @@ class QuizViewController: UIViewController {
 
     @IBOutlet weak var mainTextBox: UILabel!
     @IBOutlet weak var questionCounter: UILabel!
+    @IBOutlet weak var imageView: UIImageView!
     
     private var brain = QuizModel()
     
@@ -44,15 +45,19 @@ class QuizViewController: UIViewController {
         // qAndA will be a tuple
         let qAndA = brain.askQuestion()
         // sets textBox to show question
-        mainTextBox.text = questionBank[qAndA.0]
+        //imageView.image = UIImage(contentsOfFile: questionBank[qAndA[0]]!)
+        imageView.image = UIImage(named: "stopSign")
+        mainTextBox.text = "Asking a question!"
         
-        ans1Button.setTitle(qAndA.0.rawValue, forState: UIControlState.Normal)
+        ans1Button.setTitle(qAndA[1].rawValue, forState: UIControlState.Normal)
         
-        ans2Button.setTitle(qAndA.1.rawValue, forState: UIControlState.Normal)
+        ans2Button.setTitle(qAndA[2].rawValue, forState: UIControlState.Normal)
         
-        ans3Button.setTitle(qAndA.2.rawValue, forState: UIControlState.Normal)
+        ans3Button.setTitle(qAndA[3].rawValue, forState: UIControlState.Normal)
         
-        ans4Button.setTitle(qAndA.3.rawValue, forState: UIControlState.Normal)
+        ans4Button.setTitle(qAndA[4].rawValue, forState: UIControlState.Normal)
+        
+        
         
         if numQuestions < totalQuestions {
             numQuestions += 1
@@ -61,9 +66,8 @@ class QuizViewController: UIViewController {
             performSegueWithIdentifier("finishScreenSegue", sender: nil)
             //finishCurrentQuiz()
         }
-        
     }
-    
+
     override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
         if segue.identifier == "finishScreenSegue" {
             let nextViewController = segue.destinationViewController as! FinishScreenViewController

@@ -35,8 +35,8 @@ class QuizModel {
     
     // called by QuizViewController when "Next question" button is clicked
     // returns rng question, correct answer to the question, and 3 random incorrect answers
-    func askQuestion() -> (Sign, Sign, Sign, Sign){
-        
+    func askQuestion() -> [Sign]{
+
         readyForAnswer = true
         
         let randomIndex1 = Int(arc4random_uniform(UInt32(questions.count)))
@@ -45,10 +45,15 @@ class QuizModel {
         thirdAnswer = questions[(randomIndex1+2) % questions.count]
         fourthAnswer = questions[(randomIndex1+3) % questions.count]
         
+        
         // TODO: instead of correctAnswer always returned first, add another RNG to switch up order of the tuple
-        return (correctAnswer, secondAnswer, thirdAnswer, fourthAnswer)
+        
+        let signs = [correctAnswer, secondAnswer, thirdAnswer, fourthAnswer]
+        
+        let numbers = randomizeNumbersOneToFour()
+        
+        return [correctAnswer, signs[numbers[0]], signs[numbers[1]], signs[numbers[2]], signs[numbers[3]]]
     }
-    
     
     // checks answer
     func checkAnswer(givenAnswerFromUser: AnyObject) -> Bool {
@@ -63,5 +68,23 @@ class QuizModel {
             }
         }
         return selectedCorrect
+    }
+    
+    func randomizeNumbersOneToFour() -> [Int] {
+        let numberOne = arc4random_uniform(4)
+        
+        var numberTwo = arc4random_uniform(4)
+        while numberOne == numberTwo {
+            numberTwo = arc4random_uniform(4)
+        }
+        var numberThree = arc4random_uniform(4)
+        while (numberOne == numberThree || numberTwo == numberThree) {
+            numberThree = arc4random_uniform(4)
+        }
+        var numberFour = arc4random_uniform(4)
+        while (numberOne == numberFour || numberTwo == numberFour || numberThree == numberFour) {
+            numberFour = arc4random_uniform(4)
+        }
+        return [Int(numberOne), Int(numberTwo), Int(numberThree), Int(numberFour)]
     }
 }
