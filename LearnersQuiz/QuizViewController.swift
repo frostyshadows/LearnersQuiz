@@ -46,7 +46,7 @@ class QuizViewController: UIViewController {
         let qAndA = brain.askQuestion()
         // sets textBox to show question
         //imageView.image = UIImage(contentsOfFile: questionBank[qAndA[0]]!)
-        imageView.image = UIImage(named: "stopSign")
+        imageView.image = UIImage(named: questionBank[qAndA[0]]!)
         mainTextBox.text = "Asking a question!"
         
         ans1Button.setTitle(qAndA[1].rawValue, forState: UIControlState.Normal)

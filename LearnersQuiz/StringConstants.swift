@@ -9,9 +9,9 @@
 import Foundation
 
 struct StringConstants {
-    static let Stop = "stopSign.jpg"
-    static let NoPassing = "noPassing.jpg"
-    static let DoNotEnter = "dne.jpg"
-    static let NoPedestrians = "noPedestrians.jpg"
-    static let NoLeftTurn = "noLeftTurn.jpg"
+    static let Stop = "stopSign"
+    static let NoPassing = "noPassing"
+    static let DoNotEnter = "dne"
+    static let NoPedestrians = "noPedestrians"
+    static let NoLeftTurn = "noLeftTurn"
 }
