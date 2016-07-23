@@ -131,13 +131,18 @@
                                 <color key="textColor" red="0.0" green="0.0" blue="0.0" alpha="1" colorSpace="calibratedRGB"/>
                                 <nil key="highlightedColor"/>
                             </label>
-                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" fixedFrame="YES" image="stopSign" translatesAutoresizingMaskIntoConstraints="NO" id="zcd-ix-h53">
-                                <rect key="frame" x="141" y="417" width="318" height="163"/>
+                            <imageView userInteractionEnabled="NO" contentMode="scaleToFill" horizontalHuggingPriority="251" verticalHuggingPriority="251" image="stopSign" translatesAutoresizingMaskIntoConstraints="NO" id="zcd-ix-h53">
+                                <rect key="frame" x="206" y="405" width="187" height="187"/>
+                                <constraints>
+                                    <constraint firstAttribute="height" constant="187" id="6lX-tk-tfp"/>
+                                    <constraint firstAttribute="width" constant="187" id="PoC-l3-rnl"/>
+                                </constraints>
                             </imageView>
                         </subviews>
                         <color key="backgroundColor" white="1" alpha="1" colorSpace="custom" customColorSpace="calibratedWhite"/>
                         <constraints>
                             <constraint firstItem="ayC-fk-CIH" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="140-Mu-VO0"/>
+                            <constraint firstItem="zcd-ix-h53" firstAttribute="centerX" secondItem="gbo-fw-dEZ" secondAttribute="centerX" id="1XA-Hx-FHa"/>
                             <constraint firstItem="goA-Gw-TY6" firstAttribute="top" secondItem="ayC-fk-CIH" secondAttribute="bottom" constant="8" id="8Hq-of-Oir"/>
                             <constraint firstItem="VXc-jl-tG6" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="79" id="CEr-Kx-ohi"/>
                             <constraint firstItem="ZoV-iF-0Vt" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="CiQ-cb-rQ1"/>
@@ -149,6 +154,7 @@
                             <constraint firstItem="gbo-fw-dEZ" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="PIS-SC-U0j"/>
                             <constraint firstItem="2kp-Fy-KDy" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="8" symbolic="YES" id="QR3-lh-r13"/>
                             <constraint firstItem="VXc-jl-tG6" firstAttribute="centerX" secondItem="8bC-Xf-vdC" secondAttribute="centerX" id="bHZ-Gh-XfP"/>
+                            <constraint firstItem="wfy-db-euE" firstAttribute="top" secondItem="zcd-ix-h53" secondAttribute="bottom" constant="8" symbolic="YES" id="eTK-NQ-uCu"/>
                             <constraint firstItem="ZoV-iF-0Vt" firstAttribute="top" secondItem="goA-Gw-TY6" secondAttribute="bottom" constant="8" id="k1Z-KG-pgU"/>
                             <constraint firstItem="ayC-fk-CIH" firstAttribute="top" secondItem="UZx-BX-4fK" secondAttribute="bottom" constant="8" id="l1e-Jc-INu"/>
                             <constraint firstItem="UZx-BX-4fK" firstAttribute="top" secondItem="y3c-jy-aDJ" secondAttribute="bottom" constant="177" id="qxf-za-ezy"/>
