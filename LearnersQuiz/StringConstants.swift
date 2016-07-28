@@ -20,4 +20,10 @@ struct StringConstants {
     static let SlowerTrafficKeepRight = "slowerTrafficKeepRight"
     static let WrongWay = "wrongWay"
     static let Yield = "yield"
+    static let Railway = "raywayCrossing"
+    static let  DistAndDir = "distanceAndDirection"
+    static let LowSpeedAhead = "lowSpeedAhead"
+    static let Disaster = "disaster"
+    static let WinterTires = "winterTires"
+    static let KeepRight = "keepRight"
 }
