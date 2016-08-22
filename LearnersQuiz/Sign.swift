@@ -11,20 +11,20 @@ import Foundation
 enum Sign: String {
     
     //ready
-    case DestinationSign = "Destination sign -- distances are in kilometres"
+    case DestinationSign = "Distance and direction of destination"
     case DoNotEnter = "Do not enter"
-    case MaxSpeed = "The maxiumum legal speed when the road is bare and dry and visibility is good"
-    case NoLeft = "No left turn at intersection"
+    case MaxSpeed = "Maximum legal speed in good conditions"
+    case NoLeft = "No left turn"
     case NoPass = "Do not pass"
-    case LeftOrRightOnly = "Turn right or left only"
+    case LeftOrRightOnly = "Right or left turn only"
     case LeftTurnOnly = "Left turn only"
-    case OneWay = "One way = gives direction of traffic on cross street"
+    case OneWay = "One way"
     case Railway = "Railway crossing"
-    case SchoolZone = "School zone -- reduce speed when children are present"
-    case SlowerTrafficKeepRight = "Move into right lane if driving slower than regular traffic"
+    case SchoolZone = "School zone"
+    case SlowerTrafficKeepRight = "Move into right lane if driving slowly"
     case Stop = "Stop"
     case StraightOnly = "Go straight only"
-    case WinterTires = "Winter tires or chains must be used when sign is displayed"
+    case WinterTires = "Use winter tires or chains"
     case WrongWay = "Do not go this way"
     case Yield = "Yield the right-of-way"
     
