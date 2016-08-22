@@ -10,16 +10,20 @@ import Foundation
 
 enum Sign: String {
     
+    //ready
     case DestinationSign = "Destination sign -- distances are in kilometres"
     case DoNotEnter = "Do not enter"
     case MaxSpeed = "The maxiumum legal speed when the road is bare and dry and visibility is good"
     case NoLeft = "No left turn at intersection"
     case NoPass = "Do not pass"
+    case LeftOrRightOnly = "Turn right or left only"
+    case LeftTurnOnly = "Left turn only"
     case OneWay = "One way = gives direction of traffic on cross street"
     case Railway = "Railway crossing"
     case SchoolZone = "School zone -- reduce speed when children are present"
     case SlowerTrafficKeepRight = "Move into right lane if driving slower than regular traffic"
     case Stop = "Stop"
+    case StraightOnly = "Go straight only"
     case WinterTires = "Winter tires or chains must be used when sign is displayed"
     case WrongWay = "Do not go this way"
     case Yield = "Yield the right-of-way"
@@ -56,15 +60,14 @@ enum Sign: String {
     
     case PlaygroundNearby = "Playground nearby -- be prepared to slow down"
     case PlaygroundZone = "Playground zone -- 30 km/h limit is in effect every day from dawn to dusk"
-    case LeftOnly = "Turn left only"
-    case StraightOnly = "Continue straight only"
+    
+    
     case ThroughOrLeft = "Go through or turn left"
     case ThroughOrRight = "Go through or turn right"
     case BothDirectionsTurnLeft = "Vehicles from both directions must turn left, no through traffic allowed"
     case BothLanesTurnLeft = "Vehicles in both these lanes must turn left"
-    case LeftTurnOnly = "Left turn only"
     case GoStraightOnly = "Go straight only -- no turns"
-    case RightOrLeft = "Turn right or left only"
+    
     case NoRightTurnsDuring = "No right turns during posted times"
     case TimeLimitedParking = "Time-limited parking during posted times"
     case DoNotPark = "Do not park here"

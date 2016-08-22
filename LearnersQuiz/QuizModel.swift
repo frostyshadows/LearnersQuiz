@@ -25,6 +25,7 @@ class QuizModel {
     let questions: [Sign] = [Sign.Stop, Sign.DoNotEnter, Sign.NoPass, Sign.OneWay, Sign.NoLeft]
     
     init() {
+    
         correctAnswer = questions[0]
         secondAnswer = questions[1]
         thirdAnswer = questions[2]
@@ -45,11 +46,7 @@ class QuizModel {
         thirdAnswer = questions[(randomIndex1+2) % questions.count]
         fourthAnswer = questions[(randomIndex1+3) % questions.count]
         
-        
-        // TODO: instead of correctAnswer always returned first, add another RNG to switch up order of the tuple
-        
         let signs = [correctAnswer, secondAnswer, thirdAnswer, fourthAnswer]
-        
         let numbers = randomizeNumbersOneToFour()
         
         return [correctAnswer, signs[numbers[0]], signs[numbers[1]], signs[numbers[2]], signs[numbers[3]]]
