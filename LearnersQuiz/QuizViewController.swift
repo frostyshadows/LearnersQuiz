@@ -58,7 +58,7 @@ class QuizViewController: UIViewController {
         
         
         
-        if numQuestions < totalQuestions {
+        if numQuestions <= totalQuestions {
             questionCounter.text = "\(numQuestions)/\(totalQuestions)"
             numQuestions += 1
         } else {
