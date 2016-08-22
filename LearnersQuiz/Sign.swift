@@ -10,26 +10,41 @@ import Foundation
 
 enum Sign: String {
     
-    // copy from http://www.icbc.com/driver-licensing/Documents/drivers3.pdf
-    case Railway = "Railway crossing"
-    case Stop = "Stop"
-    case Yield = "Yield the right-of-way"
-    case MaxSpeed = "The maxiumum legal speed when the road is bare and dry and visibility is good"
-    case LowSpeedAhead = "Indicates a lower speed limit ahead"
-    case WrongWay = "Do not go this way"
-    case Disaster = "Stay off this road during major disasters"
-    case OneWay = "One way = gives direction of traffic on cross street"
-    case WinterTires = "Winter tires or chains must be used when sign is displayed"
+    case DestinationSign = "Destination sign -- distances are in kilometres"
     case DoNotEnter = "Do not enter"
-    case SlowerTrafficKeepRight = "Move into right lane if driving slower than regular traffic"
-    case KeepRightExceptPass = "Keep right unless passing"
+    case MaxSpeed = "The maxiumum legal speed when the road is bare and dry and visibility is good"
+    case NoLeft = "No left turn at intersection"
     case NoPass = "Do not pass"
+    case OneWay = "One way = gives direction of traffic on cross street"
+    case Railway = "Railway crossing"
+    case SchoolZone = "School zone -- reduce speed when children are present"
+    case SlowerTrafficKeepRight = "Move into right lane if driving slower than regular traffic"
+    case Stop = "Stop"
+    case WinterTires = "Winter tires or chains must be used when sign is displayed"
+    case WrongWay = "Do not go this way"
+    case Yield = "Yield the right-of-way"
+    
+    
+    // copy from http://www.icbc.com/driver-licensing/Documents/drivers3.pdf
+    case RailwayCrossing = "Railway crossing ahead -- be prepared to stop"
+    
+    
+    
+    case LowSpeedAhead = "Indicates a lower speed limit ahead"
+    
+    case Disaster = "Stay off this road during major disasters"
+    
+    
+    
+    
+    case KeepRightExceptPass = "Keep right unless passing"
+    
     case TwoWayTraffic = "Two-way traffic -- keep right unless passing"
     case PassingLane = "Passing lane ahead"
     case KeepRightDivider = "Keep right of the divider"
     case NoStoppingBetween = "No stopping between here and the next no-stopping sign"
     case NoStoppingDuring = "No stopping during posted times between here and the next sign"
-    case noBicycle = "No bicycle riding beyond this point"
+    case NoBicycle = "No bicycle riding beyond this point"
     case NoRightTurn = "No right turn on red light"
     case SlowVehiclesUsePullouts = "Slow vehicles to use pullouts for the next stated distance"
     case SlowVehiclePulloutAhead = "Slow vehicle pullout stated meters ahead"
@@ -38,7 +53,7 @@ enum Sign: String {
     case PedestrianActivated = "Pedestrian activated crosswalk -- preapre to stop if the light is flashing"
     case PedestrianCrosswalk = "Pedestrian crosswalk -- yield to people crossing"
     case SchoolCrosswalk = "School crosswalk -- yield to pedestrians -- if there is a crossing guard, follow directions"
-    case SchoolZone = "School zone -- reduce speed when children are present"
+    
     case PlaygroundNearby = "Playground nearby -- be prepared to slow down"
     case PlaygroundZone = "Playground zone -- 30 km/h limit is in effect every day from dawn to dusk"
     case LeftOnly = "Turn left only"
@@ -100,7 +115,7 @@ enum Sign: String {
     case EndOfConstruction = "End of construction zone speed limit"
     case FineNotice = "Fine notice for speeding in a work zone"
     case Blasting = "Blasting ahead -- follow instructions on sign"
-    case DestinationSign = "Destination sign -- distances are in kilometres"
+    
     case DirectionalSign = "Directional sign"
     case TransCanadaHighway = "Trans-Canada Highway route marker"
     case PrimaryHighway = "Primary highway marker sign"
@@ -108,9 +123,9 @@ enum Sign: String {
     case GasAvailable = "Gas available ahead"
     case Accommodation = "Accommodation ahead"
     case TravelInfo = "Travel information ahead"
-    case RailwayCrossing = "Railway crossing ahead -- be prepared to stop"
+
     case RailwayCrossingSideRoad = "Railway crossing on side road ahead -- be prepared to stop"
     case NoPed = "No pedestrians allowed on roadway"
-    case NoLeft = "No left turn at intersection"
+    
     
 }

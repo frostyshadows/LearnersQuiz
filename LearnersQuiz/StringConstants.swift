@@ -9,21 +9,23 @@
 import Foundation
 
 struct StringConstants {
-    static let Stop = "stopSign"
-    static let NoPassing = "noPassing"
+    static let DestinationSign = "destSign"
     static let DoNotEnter = "doNotEnter"
-    static let NoPedestrians = "noPedestrians"
-    static let NoLeftTurn = "noLeftTurn"
     static let MaxSpeed = "maxSpeed"
+    static let NoLeftTurn = "noLeftTurn"
+    static let NoPassing = "noPassing"
     static let OneWay = "oneWay"
+    static let Railway = "railwayCrossing"
     static let SchoolZone = "schoolZone"
     static let SlowerTrafficKeepRight = "slowerTrafficKeepRight"
+    static let Stop = "stopSign"
+    static let WinterTires = "winterTires"
     static let WrongWay = "wrongWay"
     static let Yield = "yield"
-    static let Railway = "raywayCrossing"
-    static let  DistAndDir = "distanceAndDirection"
+    
+    //should we replace this with yield to pedestrians?
+    static let NoPedestrians = "noPedestrians"
     static let LowSpeedAhead = "lowSpeedAhead"
     static let Disaster = "disaster"
-    static let WinterTires = "winterTires"
     static let KeepRight = "keepRight"
 }
