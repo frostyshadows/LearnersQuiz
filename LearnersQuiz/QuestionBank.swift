@@ -9,15 +9,17 @@
 import Foundation
 
 var questionBank: Dictionary<Sign, String> = [
-    Sign.Stop: StringConstants.Stop,
+    Sign.DestinationSign: StringConstants.DestinationSign,
     Sign.DoNotEnter: StringConstants.DoNotEnter,
-    Sign.NoPass: StringConstants.NoPassing,
-    Sign.NoPed: StringConstants.NoPedestrians,
     Sign.MaxSpeed: StringConstants.MaxSpeed,
     Sign.NoLeft: StringConstants.NoLeftTurn,
+    Sign.NoPass: StringConstants.NoPassing,
     Sign.OneWay: StringConstants.OneWay,
+    Sign.Railway: StringConstants.RailwayCrossing,
     Sign.SchoolZone: StringConstants.SchoolZone,
     Sign.SlowerTrafficKeepRight: StringConstants.SlowerTrafficKeepRight,
+    Sign.Stop: StringConstants.StopSign,
+    Sign.WinterTires: StringConstants.WinterTires,
     Sign.WrongWay: StringConstants.WrongWay,
-    Sign.Yield: StringConstants.Yield
+    Sign.Yield: StringConstants.Yield,
 ]

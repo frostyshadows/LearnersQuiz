@@ -22,7 +22,7 @@ class QuizModel {
     
     // Constants representing the filenames of the images used
 
-    let questions: [Sign] = [Sign.Stop, Sign.DoNotEnter, Sign.NoPass, Sign.NoPed, Sign.NoLeft]
+    let questions: [Sign] = [Sign.Stop, Sign.DoNotEnter, Sign.NoPass, Sign.OneWay, Sign.NoLeft]
     
     init() {
         correctAnswer = questions[0]
