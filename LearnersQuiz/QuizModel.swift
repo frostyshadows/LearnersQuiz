@@ -17,7 +17,6 @@ class QuizModel {
     private var thirdAnswer: Sign
     private var fourthAnswer: Sign
     private var readyForAnswer: Bool
-    private var selectedCorrect: Bool
     internal var currentScore = 0
     
     // Constants representing the filenames of the images used
@@ -49,7 +48,8 @@ class QuizModel {
         Sign.WindingRoadAhead,
         Sign.WinterTires,
         Sign.WrongWay,
-        Sign.Yield]
+        Sign.Yield
+    ]
 
     
     init() {
@@ -59,7 +59,6 @@ class QuizModel {
         thirdAnswer = questions[2]
         fourthAnswer = questions[3]
         readyForAnswer = true
-        selectedCorrect = false
     }
     
     // called by QuizViewController when "Next question" button is clicked
@@ -82,17 +81,17 @@ class QuizModel {
     
     // checks answer
     func checkAnswer(givenAnswerFromUser: AnyObject) -> Bool {
+        var correct = false
         if readyForAnswer {
             let givenAnswerButton = givenAnswerFromUser as! UIButton
             let givenAnswer = givenAnswerButton.currentTitle
             readyForAnswer = false
-            let correct = givenAnswer! == correctAnswer.rawValue
-            selectedCorrect = correct
-            if selectedCorrect {
+            correct = givenAnswer! == correctAnswer.rawValue
+            if correct {
                 currentScore = currentScore + 1
             }
         }
-        return selectedCorrect
+        return correct
     }
     
     func randomizeNumbersOneToFour() -> [Int] {

@@ -17,10 +17,8 @@ class QuizViewController: UIViewController {
     
     private var brain = QuizModel()
     
-    // totalQuestions should be 20 when we're done but 5 makes it easier to test
     private var totalQuestions = 20
     private var numQuestions = 1
-//    private var numCorrect = 0
     
     @IBOutlet weak var ans1Button: UIButton!
     @IBOutlet weak var ans2Button: UIButton!
@@ -31,7 +29,7 @@ class QuizViewController: UIViewController {
         if brain.checkAnswer(sender) {
             mainTextBox.text = "Good job!"
         } else {
-            mainTextBox.text = "Better luck next time"
+            mainTextBox.text = "Better luck next time!"
         }
         
     }
@@ -42,28 +40,20 @@ class QuizViewController: UIViewController {
     }
     
     @IBAction func nextQuestion() {
-        let qAndA = brain.askQuestion()
-        // sets textBox to show question
-        //imageView.image = UIImage(contentsOfFile: questionBank[qAndA[0]]!)
-        imageView.image = UIImage(named: questionBank[qAndA[0]]!)
+        let options = brain.askQuestion()
+        imageView.image = UIImage(named: questionBank[options[0]]!)
         mainTextBox.text = "Question \(numQuestions)"
         
-        ans1Button.setTitle(qAndA[1].rawValue, forState: UIControlState.Normal)
-        
-        ans2Button.setTitle(qAndA[2].rawValue, forState: UIControlState.Normal)
-        
-        ans3Button.setTitle(qAndA[3].rawValue, forState: UIControlState.Normal)
-        
-        ans4Button.setTitle(qAndA[4].rawValue, forState: UIControlState.Normal)
-        
-        
+        ans1Button.setTitle(options[1].rawValue, forState: UIControlState.Normal)
+        ans2Button.setTitle(options[2].rawValue, forState: UIControlState.Normal)
+        ans3Button.setTitle(options[3].rawValue, forState: UIControlState.Normal)
+        ans4Button.setTitle(options[4].rawValue, forState: UIControlState.Normal)
         
         if numQuestions <= totalQuestions {
             questionCounter.text = "\(numQuestions)/\(totalQuestions)"
             numQuestions += 1
         } else {
             performSegueWithIdentifier("finishScreenSegue", sender: nil)
-            //finishCurrentQuiz()
         }
     }
 
@@ -73,11 +63,6 @@ class QuizViewController: UIViewController {
             nextViewController.score = brain.currentScore
         }
     }
-    
-//    func finishCurrentQuiz() {
-//        mainTextBox.text = "Quiz finished! You got \(numCorrect) / 20"
-//    }
-    
 }
 
 
