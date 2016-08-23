@@ -19,6 +19,7 @@ enum Sign: String {
     case LeftOrRightOnly = "Right or left turn only"
     case LeftTurnOnly = "Left turn only"
     case OneWay = "One way"
+    case ParkingAllowedTimeInterval = "Parking allowed in time interval"
     case Railway = "Railway crossing"
     case SchoolZone = "School zone"
     case SlowerTrafficKeepRight = "Move into right lane if driving slowly"

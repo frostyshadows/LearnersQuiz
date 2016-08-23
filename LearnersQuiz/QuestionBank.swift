@@ -17,6 +17,7 @@ var questionBank: Dictionary<Sign, String> = [
     Sign.LeftOrRightOnly: StringConstants.LeftOrRightOnly,
     Sign.LeftTurnOnly: StringConstants.LeftTurnOnly,
     Sign.OneWay: StringConstants.OneWay,
+    Sign.ParkingAllowedTimeInterval: StringConstants.ParkingAllowedTimeInterval,
     Sign.Railway: StringConstants.RailwayCrossing,
     Sign.SchoolZone: StringConstants.SchoolZone,
     Sign.SlowerTrafficKeepRight: StringConstants.SlowerTrafficKeepRight,

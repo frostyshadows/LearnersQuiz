@@ -17,6 +17,7 @@ struct StringConstants {
     static let LeftOrRightOnly = "leftOrRightOnly"
     static let LeftTurnOnly = "leftTurnOnly"
     static let OneWay = "oneWay"
+    static let ParkingAllowedTimeInterval = "parkingAllowedTimeInterval"
     static let RailwayCrossing = "railwayCrossing"
     static let SchoolZone = "schoolZone"
     static let SlowerTrafficKeepRight = "slowerTrafficKeepRight"
