@@ -18,7 +18,7 @@ class QuizViewController: UIViewController {
     private var brain = QuizModel()
     
     // totalQuestions should be 20 when we're done but 5 makes it easier to test
-    private var totalQuestions = 5
+    private var totalQuestions = 20
     private var numQuestions = 1
 //    private var numCorrect = 0
     

@@ -22,7 +22,34 @@ class QuizModel {
     
     // Constants representing the filenames of the images used
 
-    let questions: [Sign] = [Sign.DestinationSign, Sign.DoNotEnter, Sign.DoNotPass, Sign.MaxSpeed, Sign.NoLeft, Sign.LeftOrRightOnly, Sign.LeftTurnOnly, Sign.OneWay, Sign.ParkingAllowedTimeInterval, Sign.RailwayCrossing, Sign.SchoolZone, Sign.SlowerTrafficKeepRight, Sign.Stop, Sign.StraightOnly, Sign.WinterTires, Sign.WrongWay, Sign.Yield]
+    let questions: [Sign] = [
+        Sign.CurveAhead,
+        Sign.DestinationSign,
+        Sign.DividedHighwayEndsAhead,
+        Sign.DoNotEnter,
+        Sign.DoNotPass,
+        Sign.HiddenSideRoadAhead,
+        Sign.LeftOrRightOnly,
+        Sign.LeftTurnOnly,
+        Sign.MaxSpeed,
+        Sign.MergingTrafficAhead,
+        Sign.NoLeft,
+        Sign.NoParkingAllowed,
+        Sign.NoParkingTimeInterval,
+        Sign.OneWay,
+        Sign.ParkingAllowedTimeInterval,
+        Sign.RailwayCrossing,
+        Sign.RightLaneEndsAhead,
+        Sign.RoadNarrowsAhead,
+        Sign.SchoolZone,
+        Sign.SlowerTrafficKeepRight,
+        Sign.Stop,
+        Sign.StraightOnly,
+        Sign.TwoWayTrafficAhead,
+        Sign.WindingRoadAhead,
+        Sign.WinterTires,
+        Sign.WrongWay,
+        Sign.Yield]
 
     
     init() {
