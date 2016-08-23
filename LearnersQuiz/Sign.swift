@@ -41,18 +41,9 @@ enum Sign: String {
     
     
     // copy from http://www.icbc.com/driver-licensing/Documents/drivers3.pdf
-    
-    
-    
     case LowSpeedAhead = "Indicates a lower speed limit ahead"
-    
     case Disaster = "Stay off this road during major disasters"
-    
-    
-    
-    
     case KeepRightExceptPass = "Keep right unless passing"
-    
     case TwoWayTraffic = "Two-way traffic -- keep right unless passing"
     case PassingLane = "Passing lane ahead"
     case KeepRightDivider = "Keep right of the divider"
@@ -67,17 +58,13 @@ enum Sign: String {
     case PedestrianActivated = "Pedestrian activated crosswalk -- preapre to stop if the light is flashing"
     case PedestrianCrosswalk = "Pedestrian crosswalk -- yield to people crossing"
     case SchoolCrosswalk = "School crosswalk -- yield to pedestrians -- if there is a crossing guard, follow directions"
-    
     case PlaygroundNearby = "Playground nearby -- be prepared to slow down"
     case PlaygroundZone = "Playground zone -- 30 km/h limit is in effect every day from dawn to dusk"
-    
-    
     case ThroughOrLeft = "Go through or turn left"
     case ThroughOrRight = "Go through or turn right"
     case BothDirectionsTurnLeft = "Vehicles from both directions must turn left, no through traffic allowed"
     case BothLanesTurnLeft = "Vehicles in both these lanes must turn left"
     case GoStraightOnly = "Go straight only -- no turns"
-    
     case NoRightTurnsDuring = "No right turns during posted times"
     case TimeLimitedParking = "Time-limited parking during posted times"
     case DoNotPark = "Do not park here"
@@ -121,7 +108,6 @@ enum Sign: String {
     case EndOfConstruction = "End of construction zone speed limit"
     case FineNotice = "Fine notice for speeding in a work zone"
     case Blasting = "Blasting ahead -- follow instructions on sign"
-    
     case DirectionalSign = "Directional sign"
     case TransCanadaHighway = "Trans-Canada Highway route marker"
     case PrimaryHighway = "Primary highway marker sign"
@@ -129,7 +115,6 @@ enum Sign: String {
     case GasAvailable = "Gas available ahead"
     case Accommodation = "Accommodation ahead"
     case TravelInfo = "Travel information ahead"
-
     case RailwayCrossingSideRoad = "Railway crossing on side road ahead -- be prepared to stop"
     case NoPed = "No pedestrians allowed on roadway"
     
