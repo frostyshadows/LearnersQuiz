@@ -11,27 +11,36 @@ import Foundation
 enum Sign: String {
     
     //ready
+    case CurveAhead = "Curve ahead - slow down"
     case DestinationSign = "Distance and direction of destination"
+    case DividedHighwayEndsAhead = "Divided highway ends ahead"
     case DoNotEnter = "Do not enter"
-    case MaxSpeed = "Maximum legal speed in good conditions"
-    case NoLeft = "No left turn"
-    case NoPass = "Do not pass"
+    case DoNotPass = "Do not pass"
+    case HiddenSideRoadAhead = "Hidden side road ahead"
     case LeftOrRightOnly = "Right or left turn only"
     case LeftTurnOnly = "Left turn only"
+    case MaxSpeed = "Maximum legal speed in good conditions"
+    case MergingTrafficAhead = "Merging traffic ahead"
+    case NoLeft = "No left turn"
+    case NoParkingAllowed = "No parking allowed"
+    case NoParkingTimeInterval = "No parking during time interval"
     case OneWay = "One way"
     case ParkingAllowedTimeInterval = "Parking allowed in time interval"
-    case Railway = "Railway crossing"
+    case RailwayCrossing = "Railway crossing"
+    case RightLaneEndsAhead = "Right lane ends ahead"
+    case RoadNarrowsAhead = "Road narrows ahead"
     case SchoolZone = "School zone"
     case SlowerTrafficKeepRight = "Move into right lane if driving slowly"
     case Stop = "Stop"
     case StraightOnly = "Go straight only"
+    case TwoWayTrafficAhead = "Two-way traffic ahead"
+    case WindingRoadAhead = "Winding road ahead"
     case WinterTires = "Use winter tires or chains"
     case WrongWay = "Do not go this way"
     case Yield = "Yield the right-of-way"
     
     
     // copy from http://www.icbc.com/driver-licensing/Documents/drivers3.pdf
-    case RailwayCrossing = "Railway crossing ahead -- be prepared to stop"
     
     
     
@@ -77,16 +86,9 @@ enum Sign: String {
     case OnlyBusses = "Only buses in this lane"
     case BusesAndHOV = "Only buses and HOVs in this lane -- may show how many people must be in the HOV"
     case ReservedLaneAhead = "Curb lane of cross street ahead is a reserved lane"
-    case WindingRoad = "Winding road ahead"
-    case HiddenSideRoad = "Hidden side road ahead"
     case SharpCurve = "Sharp curve ahead -- slow to advisory speed shown"
-    case CurveAhead = "Curve ahead -- slow down"
-    case MergingTraffic = "Merging traffic ahead"
     case RoadMerge = "Road merges with another road -- added lane to te right ahead"
-    case LaneEnds = "Right lane ends ahead"
     case HighwayEnds = "Divided highway ends ahead -- keep right"
-    case TwoWayTrafficAhead = "Two-way traffic ahead"
-    case RoadNarrows = "Road narrows ahead"
     case NarrowStructure = "Narrow structure ahead -- often a bridge"
     case Bump = "Bump or rough road ahead"
     case Slippery = "Road may be slippery ahead"
