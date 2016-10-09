@@ -135,6 +135,8 @@
 				TargetAttributes = {
 					43BEC0A31CE9778F00CA2896 = {
 						CreatedOnToolsVersion = 7.3;
+						DevelopmentTeam = C436KHVHT4;
+						LastSwiftMigration = 0800;
 					};
 				};
 			};
@@ -295,10 +297,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C436KHVHT4;
 				INFOPLIST_FILE = LearnersQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.ubc.cs.t2z9a.LearnersQuiz;
+				PRODUCT_BUNDLE_IDENTIFIER = org.example.sherryyxy.LearnersQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Debug;
 		};
@@ -306,10 +310,12 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				DEVELOPMENT_TEAM = C436KHVHT4;
 				INFOPLIST_FILE = LearnersQuiz/Info.plist;
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = ca.ubc.cs.t2z9a.LearnersQuiz;
+				PRODUCT_BUNDLE_IDENTIFIER = org.example.sherryyxy.LearnersQuiz;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 3.0;
 			};
 			name = Release;
 		};
