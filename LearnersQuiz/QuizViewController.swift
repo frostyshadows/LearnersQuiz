@@ -26,7 +26,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var ans4Button: UIButton!
     
     @IBAction func AnswerButton(sender: AnyObject) {
-        if brain.checkAnswer(sender) {
+        if brain.checkAnswer(givenAnswerFromUser: sender) {
             mainTextBox.text = "Good job!"
         } else {
             mainTextBox.text = "Better luck next time!"
@@ -44,22 +44,22 @@ class QuizViewController: UIViewController {
         imageView.image = UIImage(named: questionBank[options[0]]!)
         mainTextBox.text = "Question \(numQuestions)"
         
-        ans1Button.setTitle(options[1].rawValue, forState: UIControlState.Normal)
-        ans2Button.setTitle(options[2].rawValue, forState: UIControlState.Normal)
-        ans3Button.setTitle(options[3].rawValue, forState: UIControlState.Normal)
-        ans4Button.setTitle(options[4].rawValue, forState: UIControlState.Normal)
+        ans1Button.setTitle(options[1].rawValue, for: UIControlState.normal)
+        ans2Button.setTitle(options[2].rawValue, for: UIControlState.normal)
+        ans3Button.setTitle(options[3].rawValue, for: UIControlState.normal)
+        ans4Button.setTitle(options[4].rawValue, for: UIControlState.normal)
         
         if numQuestions <= totalQuestions {
             questionCounter.text = "\(numQuestions)/\(totalQuestions)"
             numQuestions += 1
         } else {
-            performSegueWithIdentifier("finishScreenSegue", sender: nil)
+            performSegue(withIdentifier: "finishScreenSegue", sender: nil)
         }
     }
 
-    override func prepareForSegue(segue: UIStoryboardSegue, sender: AnyObject?) {
+    override func prepare(for segue: UIStoryboardSegue, sender: Any?) {
         if segue.identifier == "finishScreenSegue" {
-            let nextViewController = segue.destinationViewController as! FinishScreenViewController
+            let nextViewController = segue.destination as! FinishScreenViewController
             nextViewController.score = brain.currentScore
         }
     }
