@@ -60,4 +60,5 @@ enum Sign: String {
     case WinterTires = "Use winter tires or chains"
     case WrongWay = "Do not go this way"
     case Yield = "Yield the right-of-way"
+    case Invalid
 }
