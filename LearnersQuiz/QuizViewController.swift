@@ -26,12 +26,16 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var ans4Button: UIButton!
     
     @IBAction func AnswerButton(sender: AnyObject) {
-        if brain.checkAnswer(givenAnswerFromUser: sender) {
-            mainTextBox.text = "Good job!"
-        } else {
-            mainTextBox.text = "Better luck next time!"
+        if let selection = (sender as! UIButton).currentTitle {
+            if brain.check(answer: selection) {
+                mainTextBox.text = "Good job!"
+            } else {
+                mainTextBox.text = "Better luck next time!"
+            }
         }
-        
+        else {
+            return;
+        }
     }
     
     override func viewDidLoad() {

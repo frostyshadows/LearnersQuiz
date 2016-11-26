@@ -103,13 +103,11 @@ class QuizModel {
     }
     
     // checks answer
-    func checkAnswer(givenAnswerFromUser: AnyObject) -> Bool {
+    func check(answer: String) -> Bool {
         var correct = false
         if readyForAnswer {
-            let givenAnswerButton = givenAnswerFromUser as! UIButton
-            let givenAnswer = givenAnswerButton.currentTitle
             readyForAnswer = false
-            correct = givenAnswer! == correctAnswer.rawValue
+            correct = answer == correctAnswer.rawValue
             if correct {
                 currentScore = currentScore + 1
             }
