@@ -25,7 +25,7 @@ class QuizViewController: UIViewController {
     @IBOutlet weak var ans3Button: UIButton!
     @IBOutlet weak var ans4Button: UIButton!
     
-    @IBAction func AnswerButton(sender: AnyObject) {
+    @IBAction func AnswerButton(_ sender: AnyObject) {
         if let selection = (sender as? UIButton)?.currentTitle {
             if brain.check(answer: selection) {
                 mainTextBox.text = "Good job!"
