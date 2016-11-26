@@ -45,13 +45,13 @@ class QuizViewController: UIViewController {
     
     @IBAction func nextQuestion() {
         let options = brain.askQuestion()
-        imageView.image = UIImage(named: questionBank[options[0]]!)
+        imageView.image = UIImage(named: questionBank[options.correct]!)
         mainTextBox.text = "Question \(numQuestions)"
         
-        ans1Button.setTitle(options[1].rawValue, for: UIControlState.normal)
-        ans2Button.setTitle(options[2].rawValue, for: UIControlState.normal)
-        ans3Button.setTitle(options[3].rawValue, for: UIControlState.normal)
-        ans4Button.setTitle(options[4].rawValue, for: UIControlState.normal)
+        ans1Button.setTitle(options.firstOption.rawValue, for: UIControlState.normal)
+        ans2Button.setTitle(options.secondOption.rawValue, for: UIControlState.normal)
+        ans3Button.setTitle(options.thirdOption.rawValue, for: UIControlState.normal)
+        ans4Button.setTitle(options.fourthOption.rawValue, for: UIControlState.normal)
         
         if numQuestions <= totalQuestions {
             questionCounter.text = "\(numQuestions)/\(totalQuestions)"

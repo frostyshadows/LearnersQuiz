@@ -13,10 +13,11 @@ import GameKit
 class QuizModel {
     
     private var correctAnswer: Sign
+    private var firstAnswer : Sign
     private var secondAnswer: Sign
     private var thirdAnswer: Sign
     private var fourthAnswer: Sign
-    private var readyForAnswer: Bool
+    private var readyForAnswer = true
     internal var currentScore = 0
     
     // Constants representing the filenames of the images used
@@ -76,30 +77,43 @@ class QuizModel {
 
     
     init() {
-    
         correctAnswer = questions[0]
+        firstAnswer = questions[0]
         secondAnswer = questions[1]
         thirdAnswer = questions[2]
         fourthAnswer = questions[3]
-        readyForAnswer = true
     }
+    
     
     // called by QuizViewController when "Next question" button is clicked
     // returns rng question, correct answer to the question, and 3 random incorrect answers
-    func askQuestion() -> [Sign]{
+    func askQuestion() -> (correct: Sign, firstOption: Sign, secondOption: Sign, thirdOption: Sign, fourthOption: Sign) {
 
         readyForAnswer = true
         
         let randomIndex1 = Int(arc4random_uniform(UInt32(questions.count)))
-        correctAnswer = questions[randomIndex1]
-        secondAnswer = questions[(randomIndex1+1) % questions.count]
-        thirdAnswer = questions[(randomIndex1+2) % questions.count]
-        fourthAnswer = questions[(randomIndex1+3) % questions.count]
+        var randomIndex2: Int
+        repeat {
+            randomIndex2 = Int(arc4random_uniform(UInt32(questions.count)))
+        } while (randomIndex2 == randomIndex1)
+        var randomIndex3: Int
+        repeat {
+            randomIndex3 = Int(arc4random_uniform(UInt32(questions.count)))
+        } while ((randomIndex3 == randomIndex1) || (randomIndex3 == randomIndex2))
+        var randomIndex4: Int
+        repeat {
+            randomIndex4 = Int(arc4random_uniform(UInt32(questions.count)))
+        } while ((randomIndex4 == randomIndex1) || (randomIndex4 == randomIndex2) || (randomIndex4 == randomIndex3))
         
-        let signs = [correctAnswer, secondAnswer, thirdAnswer, fourthAnswer]
-        let numbers = randomizeNumbersOneToFour()
+        firstAnswer = questions[randomIndex1]
+        secondAnswer = questions[randomIndex2]
+        thirdAnswer = questions[randomIndex3]
+        fourthAnswer = questions[randomIndex4]
         
-        return [correctAnswer, signs[numbers[0]], signs[numbers[1]], signs[numbers[2]], signs[numbers[3]]]
+        let indices = [randomIndex1, randomIndex2, randomIndex3, randomIndex4]
+        correctAnswer = questions[indices[Int(arc4random_uniform(UInt32(indices.count)))]]
+        
+        return (correctAnswer, firstAnswer, secondAnswer, thirdAnswer, fourthAnswer)
     }
     
     // checks answer
@@ -113,23 +127,5 @@ class QuizModel {
             }
         }
         return correct
-    }
-    
-    func randomizeNumbersOneToFour() -> [Int] {
-        let numberOne = arc4random_uniform(4)
-        
-        var numberTwo = arc4random_uniform(4)
-        while numberOne == numberTwo {
-            numberTwo = arc4random_uniform(4)
-        }
-        var numberThree = arc4random_uniform(4)
-        while (numberOne == numberThree || numberTwo == numberThree) {
-            numberThree = arc4random_uniform(4)
-        }
-        var numberFour = arc4random_uniform(4)
-        while (numberOne == numberFour || numberTwo == numberFour || numberThree == numberFour) {
-            numberFour = arc4random_uniform(4)
-        }
-        return [Int(numberOne), Int(numberTwo), Int(numberThree), Int(numberFour)]
     }
 }
