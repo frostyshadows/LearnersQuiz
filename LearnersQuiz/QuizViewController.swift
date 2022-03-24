@@ -48,10 +48,10 @@ class QuizViewController: UIViewController {
         imageView.image = UIImage(named: questionBank[options.correct]!)
         mainTextBox.text = "Question \(numQuestions)"
         
-        ans1Button.setTitle(options.firstOption.rawValue, for: UIControlState.normal)
-        ans2Button.setTitle(options.secondOption.rawValue, for: UIControlState.normal)
-        ans3Button.setTitle(options.thirdOption.rawValue, for: UIControlState.normal)
-        ans4Button.setTitle(options.fourthOption.rawValue, for: UIControlState.normal)
+        ans1Button.setTitle(options.firstOption.rawValue, for: .normal)
+        ans2Button.setTitle(options.secondOption.rawValue, for: .normal)
+        ans3Button.setTitle(options.thirdOption.rawValue, for: .normal)
+        ans4Button.setTitle(options.fourthOption.rawValue, for: .normal)
         
         if numQuestions <= totalQuestions {
             questionCounter.text = "\(numQuestions)/\(totalQuestions)"
